@@ -5,27 +5,38 @@ export const links = {
   email: 's.rossi@flowint.de',
 }
 
+// Tech Stack: pro Kategorie zentrale Technologien (core) und ergänzende Erfahrung (extra)
 export const techStack = [
-  { key: 'ai', items: ['Claude API', 'OpenAI API', 'Prompt Engineering', 'LLM Integration', 'MCP', 'Structured Outputs', 'AI-assisted Development'] },
-  { key: 'automation', items: ['n8n', 'Make', 'Workflow Automation', 'REST APIs', 'Webhooks', 'API Integration'] },
-  { key: 'dev', items: ['Python', 'JavaScript', 'PHP', 'SQL', 'Laravel', 'Vue.js', 'Livewire', 'HTML5', 'Tailwind CSS'] },
-  { key: 'web', items: ['WordPress', 'AI-assisted Web Development', 'Jekyll', 'API-basierte Webintegrationen'] },
-  { key: 'data', items: ['PostgreSQL', 'Apache Airflow', 'ETL/ELT', 'Data Pipelines', 'Datenmodellierung', 'SQL Views'] },
-  { key: 'analytics', items: ['Power BI', 'Metabase', 'Marketing Analytics', 'Tracking', 'Reporting'] },
-  { key: 'cloud', items: ['AWS S3', 'EC2', 'RDS', 'IAM', 'EBS', 'Docker', 'Linux', 'VPS', 'Self-Hosting'] },
-  { key: 'platforms', items: ['Google Workspace', 'Microsoft 365', 'Meta Graph API', 'Asana', 'KlickTipp', 'Webinargeek'] },
-]
-
-// Wichtigste Technologien, im Tech Stack visuell stärker hervorgehoben
-export const primaryTech = [
-  'Claude API', 'OpenAI API', 'Prompt Engineering', 'LLM Integration', 'AI-assisted Development',
-  'n8n', 'Make', 'REST APIs', 'Webhooks', 'API Integration',
-  'WordPress', 'AI-assisted Web Development',
-  'Python', 'JavaScript', 'PHP', 'SQL',
-  'PostgreSQL', 'Apache Airflow', 'ETL/ELT', 'Data Pipelines',
-  'Power BI', 'Metabase',
-  'AWS S3', 'EC2', 'RDS', 'Docker', 'Linux', 'VPS', 'Self-Hosting',
-  'Google Workspace', 'Microsoft 365', 'Meta Graph API', 'KlickTipp', 'Webinargeek',
+  {
+    key: 'ai',
+    core: ['Claude API', 'OpenAI API', 'Prompt Engineering', 'LLM Integration'],
+    extra: ['MCP', 'Structured Outputs', 'AI-assisted Development'],
+  },
+  {
+    key: 'automation',
+    core: ['n8n', 'Make', 'REST APIs', 'Webhooks'],
+    extra: ['Workflow Automation', 'API Integration'],
+  },
+  {
+    key: 'data',
+    core: ['PostgreSQL', 'SQL', 'Apache Airflow', 'ETL/ELT', 'Data Pipelines'],
+    extra: ['Datenmodellierung', 'SQL Views'],
+  },
+  {
+    key: 'dev',
+    core: ['Python', 'JavaScript', 'PHP', 'WordPress'],
+    extra: ['Laravel', 'Vue.js', 'Livewire', 'HTML5', 'Tailwind CSS', 'Jekyll', 'API-basierte Webintegrationen', 'AI-assisted Web Development'],
+  },
+  {
+    key: 'cloud',
+    core: ['AWS', 'Docker', 'Linux', 'VPS', 'Self-Hosting'],
+    extra: ['AWS S3', 'EC2', 'RDS', 'IAM', 'EBS'],
+  },
+  {
+    key: 'analytics',
+    core: ['Power BI', 'Metabase'],
+    extra: ['Google Workspace', 'Microsoft 365', 'Meta Graph API', 'Asana', 'KlickTipp', 'Webinargeek', 'Marketing Analytics', 'Tracking', 'Reporting'],
+  },
 ]
 
 export const i18n = {
@@ -71,8 +82,8 @@ export const i18n = {
     stack: {
       label: 'Fähigkeiten',
       title: 'Tech Stack',
-      groups: { ai: 'AI & LLM', automation: 'Automation', dev: 'Development', web: 'Web', data: 'Data', analytics: 'Analytics', cloud: 'Cloud & Infra', platforms: 'Plattformen' },
-      note: 'Hervorgehoben: zentrale Werkzeuge aus meinen Projekten.',
+      groups: { ai: 'AI & LLM', automation: 'Automation & Integration', data: 'Data Engineering', dev: 'Development & Web', cloud: 'Cloud & Infrastructure', analytics: 'Analytics & Platforms' },
+      extraLabels: { analytics: 'Weitere Plattformen' },
     },
     work: {
       label: 'Fokus',
@@ -275,8 +286,8 @@ export const i18n = {
     stack: {
       label: 'Capabilities',
       title: 'Tech Stack',
-      groups: { ai: 'AI & LLM', automation: 'Automation', dev: 'Development', web: 'Web', data: 'Data', analytics: 'Analytics', cloud: 'Cloud & Infra', platforms: 'Platforms' },
-      note: 'Highlighted: core tools from my projects.',
+      groups: { ai: 'AI & LLM', automation: 'Automation & Integration', data: 'Data Engineering', dev: 'Development & Web', cloud: 'Cloud & Infrastructure', analytics: 'Analytics & Platforms' },
+      extraLabels: { analytics: 'Further platforms' },
     },
     work: {
       label: 'Focus',

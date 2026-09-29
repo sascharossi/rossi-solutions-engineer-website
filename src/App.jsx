@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Particles from './Particles.jsx'
-import { i18n, links, primaryTech, techStack } from './content.js'
+import { i18n, links, techStack } from './content.js'
 
 function readRoute() {
   const h = window.location.hash
@@ -11,7 +11,6 @@ function readRoute() {
 }
 
 const sections = ['about', 'work', 'projects', 'stack', 'experience', 'education', 'contact']
-const primarySet = new Set(primaryTech)
 const chip = 'rounded-full border border-line bg-bg/60 px-3 py-1 text-sm text-slate-200'
 const eyebrow = 'font-mono text-xs uppercase tracking-widest text-accent'
 // Hero-Foto: Varianten aus scripts/optimize-hero.py (AVIF/WebP/JPEG, je 448/640/832 px breit)
@@ -459,18 +458,32 @@ export default function App() {
         <section id="stack" className={sectionPad}>
           <div className="max-w-6xl mx-auto">
             <Heading label={t.stack.label} title={t.stack.title} />
-            <Reveal className="-mt-4 md:-mt-6 mb-8"><p className="text-muted">{t.stack.note}</p></Reveal>
-            <div className="grid md:grid-cols-2 gap-x-10 gap-y-7 md:gap-y-8">
+            <div className="grid md:grid-cols-2 gap-4 md:gap-5">
               {techStack.map((g, i) => (
                 <Reveal key={g.key} delay={(i % 2) * 0.08}>
-                  <h3 className={`${eyebrow} mb-3 text-sm`}>{t.stack.groups[g.key]}</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {g.items.map((it) => primarySet.has(it) ? (
-                      <span key={it} className="rounded-full border border-accent-deep/70 bg-accent-deep/20 px-3 py-1 text-sm font-medium text-white">{it}</span>
-                    ) : (
-                      <span key={it} className="rounded-full border border-line bg-surface/70 px-3 py-1 text-sm text-muted">{it}</span>
-                    ))}
-                  </div>
+                  <article className="h-full rounded-2xl border border-line bg-gradient-to-br from-surface to-bg p-5 md:p-7 hover:border-accent/60 transition-colors">
+                    <div className="flex items-baseline gap-3">
+                      <span className="font-mono text-sm text-accent">0{i + 1}</span>
+                      <h3 className="text-lg md:text-xl font-semibold">{t.stack.groups[g.key]}</h3>
+                    </div>
+                    <div className="mt-5 flex flex-wrap gap-2 md:gap-2.5">
+                      {g.core.map((it) => (
+                        <span key={it} className="rounded-full border border-accent-deep/70 bg-accent-deep/20 px-3.5 py-1.5 text-[15px] md:text-base font-medium text-white">{it}</span>
+                      ))}
+                    </div>
+                    <div className="mt-5 border-t border-line pt-4">
+                      {t.stack.extraLabels?.[g.key] && (
+                        <p className="mb-2 font-mono text-xs uppercase tracking-widest text-muted">{t.stack.extraLabels[g.key]}</p>
+                      )}
+                      <p className="text-sm text-muted leading-7">
+                        {g.extra.map((it, n) => (
+                          <Fragment key={it}>
+                            <span className="whitespace-nowrap">{it}{n < g.extra.length - 1 && <span aria-hidden="true" className="mx-2 text-accent-deep">·</span>}</span>{' '}
+                          </Fragment>
+                        ))}
+                      </p>
+                    </div>
+                  </article>
                 </Reveal>
               ))}
             </div>
