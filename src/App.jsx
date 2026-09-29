@@ -250,7 +250,7 @@ export default function App() {
               {t.projects.items.map((p, idx) => (
                 <Reveal key={p.title}>
                   <article className="rounded-2xl border border-line bg-surface/70 p-6 md:p-8">
-                    <p className="font-mono text-sm text-accent">0{idx + 1} · {t.projects.context} · {p.scope}</p>
+                    <p className="font-mono text-sm text-accent">0{idx + 1} · {p.scope}</p>
                     <h3 className="mt-2 text-2xl md:text-3xl font-bold tracking-tight">{p.title}</h3>
                     <p className="mt-1 text-sm text-muted">{t.projects.role}</p>
                     <div className="mt-6 grid lg:grid-cols-2 gap-8">
