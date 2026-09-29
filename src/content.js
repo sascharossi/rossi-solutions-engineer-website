@@ -170,8 +170,8 @@ export const i18n = {
     },
     contact: {
       label: 'Kontakt',
-      title: 'Du hast einen Prozess, eine Website oder eine Systemlandschaft, die smarter werden soll?',
-      text: 'Lass uns über eine passende technische Lösung sprechen.',
+      title: 'Lass uns über die passende Zusammenarbeit sprechen.',
+      text: 'Ob als Verstärkung für dein Team oder für einzelne Projekte.',
       mail: 'E-Mail schreiben',
     },
     footer: 'Sascha Rossi · Solutions Engineer',
@@ -357,8 +357,8 @@ export const i18n = {
     },
     contact: {
       label: 'Contact',
-      title: 'Have a process, a website or a system landscape that should get smarter?',
-      text: "Let's talk about the right technical solution.",
+      title: "Let's talk about the right way to work together.",
+      text: 'Whether as a reinforcement for your team or for individual projects.',
       mail: 'Send an email',
     },
     footer: 'Sascha Rossi · Solutions Engineer',
