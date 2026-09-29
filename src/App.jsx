@@ -14,6 +14,10 @@ const sections = ['about', 'work', 'projects', 'stack', 'experience', 'education
 const primarySet = new Set(primaryTech)
 const chip = 'rounded-full border border-line bg-bg/60 px-3 py-1 text-sm text-slate-200'
 const eyebrow = 'font-mono text-xs uppercase tracking-widest text-accent'
+// Hero-Foto: Varianten aus scripts/optimize-hero.py (AVIF/WebP/JPEG, je 448/640/832 px breit)
+const HERO_WIDTHS = [448, 640, 832]
+const HERO_SIZES = '(min-width: 1024px) 416px, (min-width: 768px) 384px, (min-width: 640px) 288px, 224px'
+const heroSet = (ext) => HERO_WIDTHS.map((w) => `${import.meta.env.BASE_URL}img/sascha-${w}.${ext} ${w}w`).join(', ')
 const sectionPad = 'px-5 sm:px-6 py-14 md:py-24'
 
 // true, solange der Viewport der Media-Query entspricht
@@ -115,6 +119,9 @@ const Icon = {
   xing: (
     <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor"><path d="M18.19 0c-.4 0-.58.25-.72.5l-6.2 10.98 3.95 7.24c.14.25.3.5.72.5h3.4c.2 0 .33-.08.4-.2.08-.15.07-.32-.02-.5l-3.9-7.15L21.9.7c.1-.17.1-.35.02-.5-.07-.13-.2-.2-.4-.2zM4.9 4.3c-.2 0-.36.08-.44.2-.08.15-.07.33.02.5l2.3 3.97-3.6 6.35c-.1.18-.1.35-.02.5.08.13.22.2.4.2h3.4c.4 0 .6-.25.73-.5L11.4 9c-.05-.1-1.4-2.5-2.5-4.3-.13-.24-.3-.4-.72-.4z" /></svg>
   ),
+  download: (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14" /></svg>
+  ),
   mail: (
     <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></svg>
   ),
@@ -199,7 +206,7 @@ export default function App() {
                   key={l}
                   onClick={() => setLang(l)}
                   aria-pressed={lang === l}
-                  className={`px-3 py-1.5 rounded-full uppercase transition-colors ${lang === l ? 'bg-accent-deep text-white' : 'text-muted hover:text-white'}`}
+                  className={`relative before:absolute before:-inset-y-2 before:inset-x-0 before:content-[''] px-3 py-1.5 rounded-full uppercase transition-colors ${lang === l ? 'bg-accent-deep text-white' : 'text-muted hover:text-white'}`}
                 >
                   {l}
                 </button>
@@ -221,7 +228,7 @@ export default function App() {
                     onClick={() => setMenuOpen((o) => !o)}
                     aria-expanded={menuShown}
                     aria-controls="mobile-menu"
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono uppercase text-muted hover:text-white transition-colors whitespace-nowrap"
+                    className="relative before:absolute before:-inset-y-2 before:inset-x-0 before:content-[''] flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono uppercase text-muted hover:text-white transition-colors whitespace-nowrap"
                   >
                     <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                       {menuShown ? <path d="M6 6l12 12M18 6 6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
@@ -292,7 +299,21 @@ export default function App() {
             <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.4, duration: 0.8 }} className="md:col-start-2 md:row-start-1 md:row-span-2 md:self-center">
               <div className="relative w-fit">
                 <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-accent-deep/60 to-transparent blur-2xl" />
-                <img src={`${import.meta.env.BASE_URL}sascha.jpg`} alt="Sascha Rossi" width="360" height="360" className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[26rem] lg:h-[26rem] object-cover rounded-3xl border border-line" />
+                <picture className="block">
+                  <source type="image/avif" srcSet={heroSet('avif')} sizes={HERO_SIZES} />
+                  <source type="image/webp" srcSet={heroSet('webp')} sizes={HERO_SIZES} />
+                  <img
+                    src={`${import.meta.env.BASE_URL}img/sascha-640.jpg`}
+                    srcSet={heroSet('jpg')}
+                    sizes={HERO_SIZES}
+                    alt="Sascha Rossi"
+                    width="416"
+                    height="416"
+                    fetchPriority="high"
+                    decoding="async"
+                    className="relative block w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[26rem] lg:h-[26rem] object-cover rounded-3xl border border-line"
+                  />
+                </picture>
               </div>
             </motion.div>
             <div className="md:col-start-1 md:row-start-2 md:self-start">
@@ -312,30 +333,30 @@ export default function App() {
         <section id="about" className={sectionPad}>
           <div className="max-w-6xl mx-auto">
             <Heading label={t.about.label} title={t.about.title} />
-            <div className="grid lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-12">
-              <div className="space-y-5 text-muted text-base md:text-lg leading-relaxed">
+            <div className="grid lg:grid-cols-[1.15fr_1fr] gap-6 lg:gap-12">
+              <div className="space-y-4 md:space-y-5 text-muted text-base md:text-lg leading-relaxed">
                 {t.about.paras.map((p, i) => <Reveal key={i} delay={i * 0.08}><p>{p}</p></Reveal>)}
               </div>
-              <div className="space-y-5">
+              <div className="space-y-3 md:space-y-5">
                 <Reveal>
-                  <div className="rounded-2xl border border-line bg-surface/70 p-5 md:p-6">
-                    <h3 className={`${eyebrow} mb-4`}>{t.about.connectTitle}</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {t.about.connect.map((c) => <span key={c} className="rounded-full border border-accent-deep/70 bg-accent-deep/20 px-3 py-1 text-sm font-medium text-white">{c}</span>)}
+                  <div className="rounded-2xl border border-line bg-surface/70 p-4 md:p-6">
+                    <h3 className={`${eyebrow} mb-3 md:mb-4`}>{t.about.connectTitle}</h3>
+                    <div className="flex flex-wrap gap-1.5 md:gap-2">
+                      {t.about.connect.map((c) => <span key={c} className="rounded-full border border-accent-deep/70 bg-accent-deep/20 px-2.5 md:px-3 py-0.5 md:py-1 text-[13px] md:text-sm font-medium text-white">{c}</span>)}
                     </div>
                   </div>
                 </Reveal>
                 <Reveal delay={0.08}>
-                  <div className="rounded-2xl border border-line bg-surface/70 p-5 md:p-6">
-                    <h3 className={`${eyebrow} mb-4`}>{t.about.beforeTitle}</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {t.about.before.map((c) => <span key={c} className={chip}>{c}</span>)}
+                  <div className="rounded-2xl border border-line bg-surface/70 p-4 md:p-6">
+                    <h3 className={`${eyebrow} mb-3 md:mb-4`}>{t.about.beforeTitle}</h3>
+                    <div className="flex flex-wrap gap-1.5 md:gap-2">
+                      {t.about.before.map((c) => <span key={c} className="rounded-full border border-line bg-bg/60 px-2.5 md:px-3 py-0.5 md:py-1 text-[13px] md:text-sm text-slate-200">{c}</span>)}
                     </div>
                   </div>
                 </Reveal>
               </div>
             </div>
-            <Reveal className="mt-10 md:mt-14">
+            <Reveal className="mt-8 md:mt-14">
               <blockquote className="border-l-2 border-accent pl-5 md:pl-6 font-display text-xl md:text-3xl font-bold tracking-tight leading-snug grad-text">
                 {t.about.quote}
               </blockquote>
@@ -522,10 +543,13 @@ export default function App() {
             <p className="font-mono text-sm tracking-widest uppercase text-accent mb-4">{t.contact.label}</p>
             <h2 className="text-2xl md:text-4xl font-bold tracking-tight leading-snug">{t.contact.title}</h2>
             <p className="mt-4 text-muted text-lg">{t.contact.text}</p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
               <a href={`mailto:${links.email}`} className="inline-flex items-center gap-2 rounded-full bg-accent-deep hover:bg-accent text-white hover:text-bg font-semibold px-7 py-3 transition-colors">{Icon.mail}{t.contact.mail}</a>
-              <a href={links.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-line hover:border-accent font-semibold px-6 py-3 transition-colors">{Icon.linkedin}LinkedIn</a>
-              <a href={links.xing} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-line hover:border-accent font-semibold px-6 py-3 transition-colors">{Icon.xing}XING</a>
+              {links.cv && (
+                <a href={links.cv} download className="inline-flex items-center gap-2 rounded-full border border-accent-deep/70 bg-accent-deep/10 hover:border-accent hover:bg-accent-deep/25 font-semibold px-5 py-3 transition-colors">{Icon.download}{t.contact.cv}</a>
+              )}
+              <a href={links.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-line hover:border-accent font-semibold px-5 py-3 transition-colors">{Icon.linkedin}LinkedIn</a>
+              <a href={links.xing} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-line hover:border-accent font-semibold px-5 py-3 transition-colors">{Icon.xing}XING</a>
             </div>
           </Reveal>
         </section>

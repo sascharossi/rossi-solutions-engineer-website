@@ -13,7 +13,8 @@
 }
 
 html { scroll-behavior: smooth; }
-section[id] { scroll-margin-top: 3.5rem; }
+/* Anker-Sprünge: Sektions-Padding (mobil 3.5rem, ab md 6rem) plus dieser Wert hält die Überschrift unterhalb der Sticky-Navigation (Unterkante ca. 3.5rem mobil, 4rem Desktop) */
+section[id] { scroll-margin-top: 1.25rem; }
 body {
   background: var(--color-bg);
   color: #e6f0f0;

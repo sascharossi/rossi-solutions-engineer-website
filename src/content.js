@@ -3,6 +3,8 @@ export const links = {
   linkedin: 'https://www.linkedin.com/in/sascha-rossi',
   xing: 'https://www.xing.com/profile/Sascha_Rossi',
   email: 's.rossi@flowint.de',
+  // Lebenslauf-PDF: liegt sie unter public/cv/Sascha_Rossi_Lebenslauf.pdf, erscheint der Button automatisch (siehe vite.config.js)
+  cv: import.meta.env.VITE_CV_PATH ? `${import.meta.env.BASE_URL}${import.meta.env.VITE_CV_PATH}` : null,
 }
 
 export const techStack = [
@@ -105,7 +107,7 @@ export const i18n = {
           solution: 'Ein n8n-Workflow verarbeitet die Kommentar-Events der Plattformen und entscheidet pro Kommentar: beantworten, löschen, manuell prüfen oder nur protokollieren.',
           points: [
             'Harte Regeln fangen Spam, Beleidigungen und sensible Fälle vor dem LLM ab. Das Ergebnis des LLM wird vor dem Absenden gegen Sicherheits- und Plausibilitätsregeln validiert.',
-            'Korrekturen wirken ohne neuen Deploy: eine Korrektur-Tabelle mit Embedding-Abgleich übersteuert das LLM.',
+            'Korrekturen wirken ohne neuen Deploy: Ein Abgleich gegen eine Korrektur-Tabelle (Textmuster und Embedding-Ähnlichkeit) übersteuert das LLM.',
             'Sensible Fälle bekommen keine Auto-Antwort, sondern gehen per E-Mail an eine Person.',
             'Bei klarem Kontaktwunsch geht optional eine Direktnachricht raus, im zulässigen Zeitfenster.',
             'Jeder Vorgang wird nachvollziehbar protokolliert.',
@@ -202,6 +204,7 @@ export const i18n = {
       title: 'Lass uns über die passende Zusammenarbeit sprechen.',
       text: 'Ob als Verstärkung für dein Team oder für einzelne Projekte.',
       mail: 'E-Mail schreiben',
+      cv: 'Lebenslauf herunterladen',
     },
     footer: 'Sascha Rossi · Solutions Engineer',
     langLabel: 'Sprache',
@@ -309,7 +312,7 @@ export const i18n = {
           solution: 'An n8n workflow processes the platforms’ comment events and decides for each comment: reply, delete, send to manual review or just log.',
           points: [
             'Hard rules catch spam, insults and sensitive cases before the LLM. The LLM result is validated against safety and plausibility rules before anything is sent.',
-            'Corrections take effect without a new deployment: a corrections table with embedding matching overrides the LLM.',
+            'Corrections take effect without a new deployment: a comparison against a corrections table (text patterns and embedding similarity) overrides the LLM.',
             'Sensitive cases get no auto-reply and go to a person by email instead.',
             'For a clear request to be contacted, an optional direct message is sent within the permitted time window.',
             'Every action is logged traceably.',
@@ -406,6 +409,7 @@ export const i18n = {
       title: "Let's talk about the right way to work together.",
       text: 'Whether as a reinforcement for your team or for individual projects.',
       mail: 'Send an email',
+      cv: 'Download CV',
     },
     footer: 'Sascha Rossi · Solutions Engineer',
     langLabel: 'Language',
