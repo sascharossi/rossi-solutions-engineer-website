@@ -122,7 +122,7 @@ export const i18n = {
             'Jeder Vorgang wird nachvollziehbar protokolliert.',
           ],
           tags: ['n8n', 'LLM', 'Embeddings', 'Meta Graph API', 'Google Sheets'],
-          metrics: [['> 1.000', 'Kommentare pro Woche'], ['≈ 25 h', 'Zeitersparnis pro Woche'], ['≈ ¾', 'automatisiert, Rest manuell geprüft']],
+          metrics: [['> 1.000', 'Kommentare pro Woche'], ['≈ 25 h', 'Zeitersparnis pro Woche'], ['≈ 75 %', 'automatisiert, Rest manuell geprüft']],
           results: [
             'Deutlich weniger sichtbarer Spam unter den Beiträgen.',
             'Was nach den Vorgaben im LLM-Prompt nicht automatisch beantwortet werden soll, geht zur manuellen Prüfung an eine Person.',
@@ -327,7 +327,7 @@ export const i18n = {
             'Every action is logged traceably.',
           ],
           tags: ['n8n', 'LLM', 'Embeddings', 'Meta Graph API', 'Google Sheets'],
-          metrics: [['> 1,000', 'comments per week'], ['≈ 25 h', 'time saved per week'], ['≈ ¾', 'automated, rest manually reviewed']],
+          metrics: [['> 1,000', 'comments per week'], ['≈ 25 h', 'time saved per week'], ['≈ 75 %', 'automated, rest manually reviewed']],
           results: [
             'Noticeably less visible spam under the posts.',
             'Anything that the LLM instructions say should not be answered automatically goes to a person for manual review.',
