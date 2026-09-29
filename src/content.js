@@ -16,15 +16,27 @@ export const techStack = [
   { key: 'platforms', items: ['Google Workspace', 'Microsoft 365', 'Meta Graph API', 'Asana', 'KlickTipp', 'Webinargeek'] },
 ]
 
+// Wichtigste Technologien, im Tech Stack visuell stärker hervorgehoben
+export const primaryTech = [
+  'Claude API', 'OpenAI API', 'Prompt Engineering', 'LLM Integration', 'AI-assisted Development',
+  'n8n', 'Make', 'REST APIs', 'Webhooks', 'API Integration',
+  'WordPress', 'AI-assisted Web Development',
+  'Python', 'JavaScript', 'PHP', 'SQL',
+  'PostgreSQL', 'Apache Airflow', 'ETL/ELT', 'Data Pipelines',
+  'Power BI', 'Metabase',
+  'AWS S3', 'EC2', 'RDS', 'Docker', 'Linux', 'VPS', 'Self-Hosting',
+  'Google Workspace', 'Microsoft 365', 'Meta Graph API', 'KlickTipp', 'Webinargeek',
+]
+
 export const i18n = {
   de: {
-    nav: { about: 'Über mich', projects: 'Projekte', stack: 'Tech Stack', work: 'Schwerpunkte', experience: 'Erfahrung', contact: 'Kontakt' },
+    nav: { about: 'Über mich', work: 'Schwerpunkte', projects: 'Projekte', stack: 'Tech Stack', experience: 'Erfahrung', education: 'Ausbildung', contact: 'Kontakt', menu: 'Menü', close: 'Schließen' },
     hero: {
       eyebrow: 'Hallo, ich bin',
       role: 'Solutions Engineer',
       areas: 'AI Automation · Web Development · Data Engineering',
       claim: 'Web. Automation. Data. AI.',
-      text: 'Ich entwickle digitale Lösungen, die Anwendungen, Daten und Geschäftsprozesse miteinander verbinden – von modernen Websites und Webanwendungen über APIs und automatisierte Workflows bis hin zu Datenpipelines, Reporting-Lösungen und AI-gestützten Prozessen.',
+      text: 'Ich entwickle digitale Lösungen, die Anwendungen, Daten und Geschäftsprozesse miteinander verbinden – von Websites und Webanwendungen über APIs und automatisierte Workflows bis hin zu Datenpipelines, Reporting-Lösungen und AI-gestützten Prozessen.',
       cta: 'Kontakt aufnehmen',
       cta2: 'Mehr erfahren',
       scroll: 'Scrollen',
@@ -35,10 +47,18 @@ export const i18n = {
       paras: [
         'Als Solutions Engineer verbinde ich Software- und Webentwicklung mit Prozessautomatisierung, Data Engineering und modernen AI-Technologien. Mein Schwerpunkt liegt darauf, technische Möglichkeiten in funktionierende, wartbare Lösungen für reale Geschäftsprozesse zu übersetzen.',
         'Mein Hintergrund reicht von Webentwicklung und API-Integration über PostgreSQL, Datenpipelines und Cloud-Infrastruktur bis zu produktiven n8n- und Make-Automatisierungen. AI nutze ich sowohl innerhalb von Anwendungen und Workflows als auch aktiv im Entwicklungsprozess.',
-        'Durch meine frühere Erfahrung in Teamleitung, Einkauf, Logistik und operativer Verantwortung betrachte ich Technik nicht isoliert: Entscheidend ist, ob eine Lösung einen Prozess vereinfacht, zuverlässig funktioniert und einen konkreten geschäftlichen Nutzen schafft.',
+        'Vor meiner IT-Laufbahn habe ich unter anderem in Teamleitung und Personalverantwortung, im Einkauf, in Logistik und Transport, im Außendienst und selbstständig in der Eventbranche gearbeitet. Deshalb betrachte ich Technik nicht isoliert, sondern verstehe Geschäftsprozesse und betriebliche Anforderungen. Entscheidend ist, ob eine Lösung einen Prozess vereinfacht, zuverlässig funktioniert und einen konkreten geschäftlichen Nutzen schafft.',
       ],
-      eduTitle: 'Ausbildung & Qualifikationen',
-      education: [
+      connectTitle: 'Was ich verbinde',
+      connect: ['Softwareentwicklung', 'Webentwicklung', 'Prozessautomatisierung', 'Data Engineering', 'APIs', 'AI / LLM', 'Cloud-Infrastruktur'],
+      beforeTitle: 'Vor der IT-Laufbahn',
+      before: ['Teamleitung', 'Personalverantwortung', 'Einkauf', 'Logistik / Transport', 'Außendienst', 'Operative Verantwortung', 'Selbstständigkeit in der Eventbranche'],
+      quote: 'Technisches Know-how trifft auf langjährige operative Erfahrung.',
+    },
+    education: {
+      label: 'Qualifikationen',
+      title: 'Ausbildung & Qualifikationen',
+      items: [
         ['2025', 'Fachinformatiker für Anwendungsentwicklung (IHK)', 'GFN Donaueschingen'],
         ['2025', 'Künstliche Intelligenz im Online-Marketing', '121WATT'],
         ['2023', 'EXIN Agile Scrum Foundation', ''],
@@ -52,12 +72,13 @@ export const i18n = {
       label: 'Fähigkeiten',
       title: 'Tech Stack',
       groups: { ai: 'AI & LLM', automation: 'Automation', dev: 'Development', web: 'Web', data: 'Data', analytics: 'Analytics', cloud: 'Cloud & Infra', platforms: 'Plattformen' },
+      note: 'Hervorgehoben: zentrale Werkzeuge aus meinen Projekten.',
     },
     work: {
       label: 'Fokus',
       title: 'Schwerpunkte',
       items: [
-        ['AI & Workflow Automation', 'Produktive Automatisierungen mit n8n, APIs und LLMs inklusive Trigger-Logik, Datenverarbeitung, Fehlerbehandlung, Validierung und Monitoring.', ['n8n', 'LLMs', 'APIs']],
+        ['AI & Workflow Automation', 'Produktive Automatisierungen mit n8n, APIs und LLMs, inklusive Trigger-Logik, Datenverarbeitung, Fehlerbehandlung, Validierung und Monitoring.', ['n8n', 'LLMs', 'APIs']],
         ['AI-assisted Web Development', 'Entwicklung von Websites und digitalen Lösungen mit AI-gestützten Entwicklungswerkzeugen sowie Integration von APIs, Automatisierungen und externen Services.', ['WordPress', 'AI-assisted', 'APIs']],
         ['Data Pipelines & Analytics', 'Automatisierte Datenflüsse zwischen Datenquellen, PostgreSQL, Cloud-Infrastruktur und BI-/Reporting-Systemen.', ['PostgreSQL', 'Airflow', 'Power BI']],
         ['API & System Integration', 'Vernetzung von SaaS-, Marketing-, Daten- und Unternehmenssystemen über REST APIs, Webhooks und automatisierte Workflows.', ['REST', 'Webhooks', 'SaaS']],
@@ -69,6 +90,7 @@ export const i18n = {
       title: 'Ausgewählte Projekte',
       intro: 'Drei produktive Lösungen aus der Praxis, anonymisiert dargestellt.',
       role: 'Data & Automation Engineer',
+      principleLabel: 'Engineering-Entscheidung',
       problem: 'Ausgangslage',
       solution: 'Lösung',
       highlights: 'Kernpunkte',
@@ -78,10 +100,11 @@ export const i18n = {
         {
           title: 'Automatische Moderation von Social-Media-Kommentaren',
           scope: 'Instagram · Facebook',
+          principle: 'Deterministische Regeln zuerst, ein LLM nur dort, wo eine semantische Bewertung nötig ist. Nicht jeder Kommentar wird an ein LLM geschickt.',
           problem: 'Kommentare unter Beiträgen sollen zeitnah, freundlich und rechtssicher beantwortet werden. Spam und Beleidigungen sollen verschwinden, sensible Fälle gehören zu einem Menschen.',
           solution: 'Ein n8n-Workflow verarbeitet die Kommentar-Events der Plattformen und entscheidet pro Kommentar: beantworten, löschen, manuell prüfen oder nur protokollieren.',
           points: [
-            'Feste Regeln zuerst, ein LLM nur für weiche Fälle. Seine Antwort wird vor dem Absenden validiert.',
+            'Harte Regeln fangen Spam, Beleidigungen und sensible Fälle vor dem LLM ab. Das Ergebnis des LLM wird vor dem Absenden gegen Sicherheits- und Plausibilitätsregeln validiert.',
             'Korrekturen wirken ohne neuen Deploy: eine Korrektur-Tabelle mit Embedding-Abgleich übersteuert das LLM.',
             'Sensible Fälle bekommen keine Auto-Antwort, sondern gehen per E-Mail an eine Person.',
             'Bei klarem Kontaktwunsch geht optional eine Direktnachricht raus, im zulässigen Zeitfenster.',
@@ -98,6 +121,7 @@ export const i18n = {
             [['Kommentar', 'Instagram / Facebook']],
             [['Vorfilter', 'Eigene Kommentare, Dubletten']],
             [['Regeln + LLM', 'Klassifizierung']],
+            [['Validierung', 'Entscheidung']],
             [['Antworten'], ['Löschen'], ['Manuelle Prüfung'], ['Nur protokollieren']],
             [['Protokoll', 'Tabelle']],
           ],
@@ -108,11 +132,13 @@ export const i18n = {
           problem: 'Anfragen für Drehtermine sollen strukturiert erfasst, freigegeben und automatisch in Kalender und Übersicht übernommen werden, mit sparsamem Umgang mit personenbezogenen Daten.',
           solution: 'Ein Webformular sendet die Anfrage an n8n. Ein Workflow legt sie in Aufgabenverwaltung und Datenbank ab. Nach der Freigabe erzeugt ein zweiter Workflow Kalendereintrag und Übersicht.',
           points: [
-            'Datenminimierung: Die Aufgabenverwaltung enthält nur einen reduzierten Datensatz, die vollständigen Daten liegen in der Datenbank.',
-            'Eine Freigabe steht vor dem Kalendereintrag, zwei getrennte Workflows für Eingang und Freigabe.',
-            'Technische Dokumentation für IT-Betrieb und Datenschutz.',
+            'Webformular als Einstieg: Die Anfrage geht per Webhook an n8n, eine Eingangsbestätigung folgt automatisch.',
+            'Datenschutz und Datenminimierung: Die Aufgabenverwaltung enthält nur einen reduzierten Datensatz, die vollständigen personenbezogenen Daten liegen in der PostgreSQL-Datenbank.',
+            'Freigabeprozess: Erst nach der Freigabe entsteht der Termin. Zwei getrennte Workflows für Eingang und Freigabe.',
+            'Kalenderintegration: Bestätigte Termine landen automatisch im gemeinsamen Kalender, eine Übersicht wird fortlaufend ergänzt.',
+            'Technische Dokumentation für IT-Betrieb und Datenschutzbeauftragte.',
           ],
-          tags: ['n8n', 'PostgreSQL', 'AWS', 'Webhooks', 'Google Sheets'],
+          tags: ['n8n', 'PostgreSQL', 'AWS', 'Webhooks', 'Asana', 'Outlook Kalender', 'Google Sheets'],
           metrics: [['30', 'Nutzer'], ['≈ 5 h', 'Zeitersparnis pro Woche'], ['0', 'Terminkollisionen']],
           results: [
             'Vorher lief viel über mündliche Abstimmung, jetzt ist alles transparent und verbindlich.',
@@ -133,13 +159,13 @@ export const i18n = {
           problem: 'Kontakte aus mehreren Standort-Systemen sollen automatisch, sicher und dubletten-frei im Newsletter-System ankommen. Abgemeldete Personen müssen dauerhaft ausgeschlossen bleiben.',
           solution: 'Ein nächtlicher Ablauf importiert die Kontakte je Standort, konsolidiert sie in einer PostgreSQL-Datenbank, filtert Abmeldungen, verschlüsselt den Export und übergibt ihn über einen Cloud-Speicher an einen n8n-Workflow.',
           points: [
-            'Konsolidierung und Deduplizierung per SQL.',
+            'Mehrere Standortsysteme werden zu einem gemeinsamen Bestand konsolidiert, dedupliziert per SQL.',
             'Autokorrektur von Tippfehlern bei bekannten E-Mail-Anbietern.',
             'Sperrliste: Abmeldungen werden bei jedem Lauf durchgesetzt.',
             'Verschlüsselter Transfer mit automatischer Löschfrist.',
-            'Fehlerreport per E-Mail.',
+            'Fehlerreporting per E-Mail.',
           ],
-          tags: ['PostgreSQL', 'SQL', 'GPG', 'AWS S3', 'n8n', 'KlickTipp'],
+          tags: ['PostgreSQL', 'SQL', 'ETL', 'GPG', 'AWS S3', 'n8n', 'KlickTipp'],
           metrics: [['150–200', 'Kontakte pro Tag'], ['6', 'Standorte'], ['0', 'neue Duplikate']],
           results: [
             'Der manuelle Pflegeaufwand entfällt, und viele Fehlerquellen sind beseitigt.',
@@ -161,12 +187,15 @@ export const i18n = {
       label: 'Werdegang',
       title: 'Erfahrung',
       items: [
-        ['08/2026 – heute', 'Solutions Engineer', 'Reknova GmbH', 'Webentwicklung und WordPress, AI-assisted Development, Automatisierung von Marketing- und Geschäftsprozessen, Entwicklung und Integration von APIs, systemübergreifende Workflows, Reporting- und Analyse-Lösungen sowie Integration von AI-/LLM-Komponenten. Technische Umsetzung von der Anforderungsanalyse über Entwicklung und Testing bis zur Integration.'],
-        ['02/2025 – 07/2026', 'Data & Automation Engineer', 'MVZ Dr. Dr. Dorow GmbH', 'Entwicklung produktiver n8n- und Make-Workflows, API-Integrationen, PostgreSQL und Datenverarbeitung, Python-/Airflow-Datenpipelines, AWS-Infrastruktur, AI-gestützte Automatisierungen, Marketing- und Tracking-Analysen sowie Dashboards mit Power BI und Metabase. Zusätzlich Administration und Dokumentation der Marketing-IT.'],
-        ['05/2024 – 01/2025', 'Webentwickler (Praktikum)', 'Bitblades Solutions UG / Chaingateway', 'Backend mit PHP/Laravel, Frontend mit JavaScript, Vue.js und Livewire, Tailwind CSS, relationale Datenbanken, Redis, WebSockets und Jekyll. Mitarbeit an der Architektur eines Softwareprodukts.'],
+        ['08/2026 – heute', 'Solutions Engineer', 'Reknova GmbH (SUMAX)', 'Webentwicklung und WordPress sind ein wesentlicher Teil meiner Arbeit. Dazu kommen AI-assisted Development, die Automatisierung von Marketing- und Geschäftsprozessen, Entwicklung und Integration von APIs, systemübergreifende Workflows, Reporting- und Analyse-Lösungen sowie die Integration von AI-/LLM-Komponenten. Technische Umsetzung von der Anforderungsanalyse über Entwicklung und Testing bis zur Integration.', ['Webentwicklung', 'WordPress', 'AI-assisted Development', 'APIs', 'Workflows', 'Reporting', 'LLM-Integration']],
+        ['02/2025 – 07/2026', 'Data & Automation Engineer', 'MVZ Dr. Dr. Dorow GmbH', 'Entwicklung produktiver n8n- und Make-Workflows, API-Integrationen, PostgreSQL und Datenverarbeitung, Python-/Airflow-Datenpipelines, AWS-Infrastruktur, AI-gestützte Automatisierungen, Marketing- und Tracking-Analysen sowie Dashboards mit Power BI und Metabase. Zusätzlich Administration und Dokumentation der Marketing-IT.', ['n8n', 'Make', 'PostgreSQL', 'Python', 'Airflow', 'AWS', 'Power BI', 'Metabase']],
+        ['05/2024 – 01/2025', 'Webentwickler (Praktikum)', 'Bitblades Solutions UG / Chaingateway', 'Backend mit PHP/Laravel, Frontend mit JavaScript, Vue.js und Livewire, Tailwind CSS, relationale Datenbanken, Redis, WebSockets und Jekyll. Mitarbeit an der Architektur eines Softwareprodukts.', ['PHP / Laravel', 'JavaScript', 'Vue.js', 'Livewire', 'Tailwind CSS', 'Redis', 'WebSockets', 'Jekyll']],
       ],
       earlierTitle: 'Frühere Erfahrung',
-      earlier: 'Teamleitung und Personalverantwortung · Freelancer in der Eventbranche · Teamleitung Logistik / Transport · Technischer Einkauf und Außendienst. Diese Stationen ergänzen den technischen Hintergrund um Prozessverständnis, Kundenorientierung, Organisation und operative Verantwortung.',
+      earlierIntro: 'Vor meiner IT-Laufbahn habe ich bereits umfangreiche Berufserfahrung gesammelt. Sie ergänzt meinen technischen Hintergrund um ein Verständnis realer Geschäftsprozesse.',
+      earlierItems: ['Teamleitung und Personalverantwortung', 'Freelancer in der Eventbranche', 'Teamleitung Logistik / Transport', 'Technischer Einkauf und Außendienst'],
+      earlierLinksTitle: 'Was ich daraus in die Technik mitbringe',
+      earlierLinks: ['Prozessverständnis', 'Kundenorientierung', 'Organisation', 'Kommunikation', 'Verantwortung', 'Verständnis realer Geschäftsprozesse'],
     },
     contact: {
       label: 'Kontakt',
@@ -205,13 +234,13 @@ export const i18n = {
     footerLinks: { impressum: 'Impressum', datenschutz: 'Datenschutz' },
   },
   en: {
-    nav: { about: 'About', projects: 'Projects', stack: 'Tech Stack', work: 'Focus Areas', experience: 'Experience', contact: 'Contact' },
+    nav: { about: 'About', work: 'Focus Areas', projects: 'Projects', stack: 'Tech Stack', experience: 'Experience', education: 'Education', contact: 'Contact', menu: 'Menu', close: 'Close' },
     hero: {
       eyebrow: "Hi, I'm",
       role: 'Solutions Engineer',
       areas: 'AI Automation · Web Development · Data Engineering',
       claim: 'Web. Automation. Data. AI.',
-      text: 'I build digital solutions that connect applications, data and business processes – from modern websites and web applications to APIs and automated workflows, data pipelines, reporting solutions and AI-powered processes.',
+      text: 'I build digital solutions that connect applications, data and business processes – from websites and web applications to APIs and automated workflows, data pipelines, reporting solutions and AI-powered processes.',
       cta: 'Get in touch',
       cta2: 'Learn more',
       scroll: 'Scroll',
@@ -222,10 +251,18 @@ export const i18n = {
       paras: [
         'As a Solutions Engineer, I combine software and web development with process automation, data engineering and modern AI technologies. My focus is on turning technical possibilities into working, maintainable solutions for real business processes.',
         'My background ranges from web development and API integration to PostgreSQL, data pipelines and cloud infrastructure, through to production n8n and Make automations. I use AI both inside applications and workflows and actively as part of the development process.',
-        'Thanks to my earlier experience in team leadership, purchasing, logistics and operational responsibility, I never look at technology in isolation: what matters is whether a solution simplifies a process, works reliably and delivers concrete business value.',
+        'Before my IT career I worked in team leadership and staff responsibility, purchasing, logistics and transport, field sales and, self-employed, in the event industry. That is why I never look at technology in isolation but understand business processes and operational requirements. What matters is whether a solution simplifies a process, works reliably and delivers concrete business value.',
       ],
-      eduTitle: 'Education & Qualifications',
-      education: [
+      connectTitle: 'What I connect',
+      connect: ['Software development', 'Web development', 'Process automation', 'Data engineering', 'APIs', 'AI / LLM', 'Cloud infrastructure'],
+      beforeTitle: 'Before IT',
+      before: ['Team leadership', 'Staff responsibility', 'Purchasing', 'Logistics / transport', 'Field sales', 'Operational responsibility', 'Self-employed in the event industry'],
+      quote: 'Technical know-how meets years of operational experience.',
+    },
+    education: {
+      label: 'Qualifications',
+      title: 'Education & Qualifications',
+      items: [
         ['2025', 'IT Specialist for Application Development (IHK)', 'GFN Donaueschingen'],
         ['2025', 'Artificial Intelligence in Online Marketing', '121WATT'],
         ['2023', 'EXIN Agile Scrum Foundation', ''],
@@ -239,6 +276,7 @@ export const i18n = {
       label: 'Capabilities',
       title: 'Tech Stack',
       groups: { ai: 'AI & LLM', automation: 'Automation', dev: 'Development', web: 'Web', data: 'Data', analytics: 'Analytics', cloud: 'Cloud & Infra', platforms: 'Platforms' },
+      note: 'Highlighted: core tools from my projects.',
     },
     work: {
       label: 'Focus',
@@ -256,6 +294,7 @@ export const i18n = {
       title: 'Selected Projects',
       intro: 'Three production solutions from real-world practice, shown anonymised.',
       role: 'Data & Automation Engineer',
+      principleLabel: 'Engineering decision',
       problem: 'Starting point',
       solution: 'Solution',
       highlights: 'Key points',
@@ -265,10 +304,11 @@ export const i18n = {
         {
           title: 'Automated Social Media Comment Moderation',
           scope: 'Instagram · Facebook',
+          principle: 'Deterministic rules first, an LLM only where a semantic assessment is needed. Not every comment is sent to an LLM.',
           problem: 'Comments under posts need to be answered quickly, in a friendly tone and in compliance with regulations. Spam and insults should disappear, and sensitive cases belong with a person.',
           solution: 'An n8n workflow processes the platforms’ comment events and decides for each comment: reply, delete, send to manual review or just log.',
           points: [
-            'Fixed rules first, an LLM only for soft cases. Its reply is validated before it is sent.',
+            'Hard rules catch spam, insults and sensitive cases before the LLM. The LLM result is validated against safety and plausibility rules before anything is sent.',
             'Corrections take effect without a new deployment: a corrections table with embedding matching overrides the LLM.',
             'Sensitive cases get no auto-reply and go to a person by email instead.',
             'For a clear request to be contacted, an optional direct message is sent within the permitted time window.',
@@ -285,6 +325,7 @@ export const i18n = {
             [['Comment', 'Instagram / Facebook']],
             [['Pre-filter', 'Own comments, duplicates']],
             [['Rules + LLM', 'Classification']],
+            [['Validation', 'Decision']],
             [['Reply'], ['Delete'], ['Manual review'], ['Log only']],
             [['Log', 'Spreadsheet']],
           ],
@@ -295,11 +336,13 @@ export const i18n = {
           problem: 'Requests for video shoots should be captured in a structured way, approved and automatically transferred to the calendar and overview, with minimal handling of personal data.',
           solution: 'A web form sends the request to n8n. One workflow stores it in the task tool and the database. After approval, a second workflow creates the calendar entry and overview.',
           points: [
-            'Data minimisation: the task tool holds only a reduced record, the full data lives in the database.',
-            'An approval step precedes the calendar entry, with two separate workflows for intake and approval.',
-            'Technical documentation for IT operations and data protection.',
+            'Web form as entry point: the request goes to n8n via webhook, a confirmation of receipt follows automatically.',
+            'Data protection and minimisation: the task tool holds only a reduced record, the full personal data lives in the PostgreSQL database.',
+            'Approval process: the appointment is only created after approval. Two separate workflows for intake and approval.',
+            'Calendar integration: confirmed appointments land in the shared calendar automatically, an overview is kept up to date.',
+            'Technical documentation for IT operations and the data protection officer.',
           ],
-          tags: ['n8n', 'PostgreSQL', 'AWS', 'Webhooks', 'Google Sheets'],
+          tags: ['n8n', 'PostgreSQL', 'AWS', 'Webhooks', 'Asana', 'Outlook Kalender', 'Google Sheets'],
           metrics: [['30', 'users'], ['≈ 5 h', 'time saved per week'], ['0', 'scheduling conflicts']],
           results: [
             'Previously a lot was coordinated verbally, now everything is transparent and binding.',
@@ -320,13 +363,13 @@ export const i18n = {
           problem: 'Contacts from several location systems should arrive in the newsletter system automatically, securely and without duplicates. Unsubscribed people must stay permanently excluded.',
           solution: 'A nightly run imports the contacts per location, consolidates them in a PostgreSQL database, filters out unsubscribes, encrypts the export and hands it over via cloud storage to an n8n workflow.',
           points: [
-            'Consolidation and deduplication in SQL.',
+            'Several location systems are consolidated into one shared dataset, deduplicated in SQL.',
             'Auto-correction of typos in well-known email providers.',
             'Block list: unsubscribes are enforced on every run.',
             'Encrypted transfer with an automatic deletion period.',
-            'Error report by email.',
+            'Error reporting by email.',
           ],
-          tags: ['PostgreSQL', 'SQL', 'GPG', 'AWS S3', 'n8n', 'KlickTipp'],
+          tags: ['PostgreSQL', 'SQL', 'ETL', 'GPG', 'AWS S3', 'n8n', 'KlickTipp'],
           metrics: [['150–200', 'contacts per day'], ['6', 'locations'], ['0', 'new duplicates']],
           results: [
             'Manual maintenance is gone and many sources of error are eliminated.',
@@ -348,12 +391,15 @@ export const i18n = {
       label: 'Career',
       title: 'Experience',
       items: [
-        ['08/2026 – present', 'Solutions Engineer', 'Reknova GmbH', 'Web development and WordPress, AI-assisted development, automation of marketing and business processes, development and integration of APIs, cross-system workflows, reporting and analytics solutions, and integration of AI/LLM components. Technical delivery from requirements analysis through development and testing to integration.'],
-        ['02/2025 – 07/2026', 'Data & Automation Engineer', 'MVZ Dr. Dr. Dorow GmbH', 'Development of production n8n and Make workflows, API integrations, PostgreSQL and data processing, Python/Airflow data pipelines, AWS infrastructure, AI-powered automations, marketing and tracking analyses, and dashboards with Power BI and Metabase. Additionally administration and documentation of marketing IT.'],
-        ['05/2024 – 01/2025', 'Web Developer (Internship)', 'Bitblades Solutions UG / Chaingateway', 'Backend with PHP/Laravel, frontend with JavaScript, Vue.js and Livewire, Tailwind CSS, relational databases, Redis, WebSockets and Jekyll. Contributed to the architecture of a software product.'],
+        ['08/2026 – present', 'Solutions Engineer', 'Reknova GmbH (SUMAX)', 'Web development and WordPress are a substantial part of my work. On top of that come AI-assisted development, automation of marketing and business processes, development and integration of APIs, cross-system workflows, reporting and analytics solutions, and integration of AI/LLM components. Technical delivery from requirements analysis through development and testing to integration.', ['Web development', 'WordPress', 'AI-assisted development', 'APIs', 'Workflows', 'Reporting', 'LLM integration']],
+        ['02/2025 – 07/2026', 'Data & Automation Engineer', 'MVZ Dr. Dr. Dorow GmbH', 'Development of production n8n and Make workflows, API integrations, PostgreSQL and data processing, Python/Airflow data pipelines, AWS infrastructure, AI-powered automations, marketing and tracking analyses, and dashboards with Power BI and Metabase. Additionally administration and documentation of marketing IT.', ['n8n', 'Make', 'PostgreSQL', 'Python', 'Airflow', 'AWS', 'Power BI', 'Metabase']],
+        ['05/2024 – 01/2025', 'Web Developer (Internship)', 'Bitblades Solutions UG / Chaingateway', 'Backend with PHP/Laravel, frontend with JavaScript, Vue.js and Livewire, Tailwind CSS, relational databases, Redis, WebSockets and Jekyll. Contributed to the architecture of a software product.', ['PHP / Laravel', 'JavaScript', 'Vue.js', 'Livewire', 'Tailwind CSS', 'Redis', 'WebSockets', 'Jekyll']],
       ],
       earlierTitle: 'Earlier experience',
-      earlier: 'Team leadership and staff responsibility · Freelancer in the event industry · Team lead logistics / transport · Technical purchasing and field sales. These roles add process understanding, customer orientation, organisation and operational responsibility to my technical background.',
+      earlierIntro: 'Before my IT career I gained substantial professional experience. It adds an understanding of real business processes to my technical background.',
+      earlierItems: ['Team leadership and staff responsibility', 'Freelancer in the event industry', 'Team lead logistics / transport', 'Technical purchasing and field sales'],
+      earlierLinksTitle: 'What I bring from it into technology',
+      earlierLinks: ['Process understanding', 'Customer orientation', 'Organisation', 'Communication', 'Responsibility', 'Understanding of real business processes'],
     },
     contact: {
       label: 'Contact',

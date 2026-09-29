@@ -13,6 +13,7 @@
 }
 
 html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 3.5rem; }
 body {
   background: var(--color-bg);
   color: #e6f0f0;
