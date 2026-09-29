@@ -365,17 +365,22 @@ export default function App() {
           <div className="max-w-6xl mx-auto">
             <Heading label={t.work.label} title={t.work.title} />
             <div className="grid md:grid-cols-2 gap-4 md:gap-5">
-              {t.work.items.map(([title, text, tags], i) => (
-                <Reveal key={title} delay={(i % 2) * 0.08}>
-                  <article className="h-full rounded-2xl border border-line bg-gradient-to-br from-surface to-bg p-5 md:p-7 hover:border-accent/60 transition-colors">
-                    <h3 className="text-lg md:text-xl font-semibold">{title}</h3>
-                    <p className="mt-3 text-muted leading-relaxed">{text}</p>
-                    <div className="mt-5 flex flex-wrap gap-2">
-                      {tags.map((tag) => <span key={tag} className="font-mono text-xs text-accent border border-accent-deep/60 rounded px-2 py-0.5">{tag}</span>)}
-                    </div>
-                  </article>
-                </Reveal>
-              ))}
+              {t.work.items.map(([title, text, tags], i) => {
+                const wide = t.work.items.length % 2 === 1 && i === t.work.items.length - 1
+                return (
+                  <Reveal key={title} delay={(i % 2) * 0.08} className={wide ? 'md:col-span-2' : ''}>
+                    <article className={`h-full rounded-2xl border border-line bg-gradient-to-br from-surface to-bg p-5 md:p-7 hover:border-accent/60 transition-colors ${wide ? 'md:flex md:items-end md:justify-between md:gap-10' : ''}`}>
+                      <div className={wide ? 'md:max-w-2xl' : ''}>
+                        <h3 className="text-lg md:text-xl font-semibold">{title}</h3>
+                        <p className="mt-3 text-muted leading-relaxed">{text}</p>
+                      </div>
+                      <div className={`mt-5 flex flex-wrap gap-2 ${wide ? 'md:mt-0 md:shrink-0' : ''}`}>
+                        {tags.map((tag) => <span key={tag} className="font-mono text-xs text-accent border border-accent-deep/60 rounded px-2 py-0.5">{tag}</span>)}
+                      </div>
+                    </article>
+                  </Reveal>
+                )
+              })}
             </div>
           </div>
         </section>
@@ -461,21 +466,21 @@ export default function App() {
             <div className="grid md:grid-cols-2 gap-4 md:gap-5">
               {techStack.map((g, i) => (
                 <Reveal key={g.key} delay={(i % 2) * 0.08}>
-                  <article className="h-full rounded-2xl border border-line bg-gradient-to-br from-surface to-bg p-5 md:p-7 hover:border-accent/60 transition-colors">
+                  <article className="h-full rounded-2xl border border-line bg-gradient-to-br from-surface to-bg p-5 md:p-6 hover:border-accent/60 transition-colors">
                     <div className="flex items-baseline gap-3">
                       <span className="font-mono text-sm text-accent">0{i + 1}</span>
                       <h3 className="text-lg md:text-xl font-semibold">{t.stack.groups[g.key]}</h3>
                     </div>
-                    <div className="mt-5 flex flex-wrap gap-2 md:gap-2.5">
+                    <div className="mt-4 flex flex-wrap gap-2 md:gap-2.5">
                       {g.core.map((it) => (
                         <span key={it} className="rounded-full border border-accent-deep/70 bg-accent-deep/20 px-3.5 py-1.5 text-[15px] md:text-base font-medium text-white">{it}</span>
                       ))}
                     </div>
-                    <div className="mt-5 border-t border-line pt-4">
+                    <div className="mt-4 border-t border-line pt-3.5">
                       {t.stack.extraLabels?.[g.key] && (
-                        <p className="mb-2 font-mono text-xs uppercase tracking-widest text-muted">{t.stack.extraLabels[g.key]}</p>
+                        <p className="mb-1.5 font-mono text-xs uppercase tracking-widest text-accent/80">{t.stack.extraLabels[g.key]}</p>
                       )}
-                      <p className="text-sm text-muted leading-7">
+                      <p className={`leading-[1.6rem] ${t.stack.extraLabels?.[g.key] ? 'text-[15px] md:text-base text-slate-200' : 'text-sm md:text-[15px] text-[#a9bdc0]'}`}>
                         {g.extra.map((it, n) => (
                           <Fragment key={it}>
                             <span className="whitespace-nowrap">{t.stack.rename?.[it] ?? it}{n < g.extra.length - 1 && <span aria-hidden="true" className="mx-2 text-accent-deep">·</span>}</span>{' '}
