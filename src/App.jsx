@@ -396,7 +396,7 @@ export default function App() {
                   <article className="rounded-2xl border border-line bg-surface/70 p-5 md:p-8">
                     <p className="font-mono text-sm text-accent">0{idx + 1} · {p.scope}</p>
                     <h3 className="mt-2 text-xl md:text-3xl font-bold tracking-tight">{p.title}</h3>
-                    <p className="mt-1 text-sm text-muted">{t.projects.role}</p>
+                    <p className="mt-1 text-sm text-muted">{p.role ?? t.projects.role}</p>
                     {p.principle && (
                       <div className="mt-5 rounded-xl border border-accent-deep/70 bg-accent-deep/15 p-4 md:p-5">
                         <p className={`${eyebrow} mb-1.5`}>{t.projects.principleLabel}</p>
@@ -406,16 +406,16 @@ export default function App() {
                     <div className="mt-6 grid lg:grid-cols-2 gap-6 lg:gap-8">
                       <div className="space-y-5">
                         <div>
-                          <h4 className={`${eyebrow} mb-2`}>{t.projects.problem}</h4>
+                          <h4 className={`${eyebrow} mb-2`}>{p.labels?.problem ?? t.projects.problem}</h4>
                           <p className="text-muted leading-relaxed">{p.problem}</p>
                         </div>
                         <div>
-                          <h4 className={`${eyebrow} mb-2`}>{t.projects.solution}</h4>
+                          <h4 className={`${eyebrow} mb-2`}>{p.labels?.solution ?? t.projects.solution}</h4>
                           <p className="text-muted leading-relaxed">{p.solution}</p>
                         </div>
                       </div>
                       <div>
-                        <h4 className={`${eyebrow} mb-2`}>{t.projects.highlights}</h4>
+                        <h4 className={`${eyebrow} mb-2`}>{p.labels?.highlights ?? t.projects.highlights}</h4>
                         <ul className="space-y-2">
                           {p.points.map((pt) => (
                             <li key={pt} className="flex gap-3 text-muted leading-relaxed">
@@ -426,32 +426,39 @@ export default function App() {
                         </ul>
                       </div>
                     </div>
-                    <div className="mt-7 md:mt-8">
-                      <h4 className={`${eyebrow} mb-3`}>{t.projects.results}</h4>
-                      <div className="grid sm:grid-cols-3 gap-2 sm:gap-3">
-                        {p.metrics.map(([value, label]) => (
-                          <div key={label} className="rounded-xl border border-line bg-bg/70 px-4 py-3 sm:p-4 flex items-baseline gap-4 sm:block">
-                            <p className="font-display text-2xl sm:text-3xl font-bold text-accent shrink-0 min-w-[6.5rem] sm:min-w-0">{value}</p>
-                            <p className="sm:mt-1 text-sm text-muted">{label}</p>
-                          </div>
-                        ))}
+                    {p.metrics && (
+                      <div className="mt-7 md:mt-8">
+                        <h4 className={`${eyebrow} mb-3`}>{t.projects.results}</h4>
+                        <div className="grid sm:grid-cols-3 gap-2 sm:gap-3">
+                          {p.metrics.map(([value, label]) => (
+                            <div key={label} className="rounded-xl border border-line bg-bg/70 px-4 py-3 sm:p-4 flex items-baseline gap-4 sm:block">
+                              <p className="font-display text-2xl sm:text-3xl font-bold text-accent shrink-0 min-w-[6.5rem] sm:min-w-0">{value}</p>
+                              <p className="sm:mt-1 text-sm text-muted">{label}</p>
+                            </div>
+                          ))}
+                        </div>
+                        <ul className="mt-4 space-y-2">
+                          {p.results.map((r) => (
+                            <li key={r} className="flex gap-3 text-muted leading-relaxed">
+                              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+                              <span>{r}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                      <ul className="mt-4 space-y-2">
-                        {p.results.map((r) => (
-                          <li key={r} className="flex gap-3 text-muted leading-relaxed">
-                            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
-                            <span>{r}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="mt-7 md:mt-8">
-                      <h4 className={`${eyebrow} mb-3`}>{t.projects.flow}</h4>
-                      <Flow stages={p.flow} />
-                    </div>
+                    )}
+                    {p.flow && (
+                      <div className="mt-7 md:mt-8">
+                        <h4 className={`${eyebrow} mb-3`}>{t.projects.flow}</h4>
+                        <Flow stages={p.flow} />
+                      </div>
+                    )}
                     <div className="mt-6 flex flex-wrap gap-2">
                       {p.tags.map((tag) => <span key={tag} className="font-mono text-xs text-accent border border-accent-deep/60 rounded px-2 py-0.5">{tag}</span>)}
                     </div>
+                    {p.link && (
+                      <a href={p.link.url} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full border border-line hover:border-accent font-semibold px-5 py-2.5 transition-colors">{p.link.label}</a>
+                    )}
                   </article>
                 </Reveal>
               ))}
