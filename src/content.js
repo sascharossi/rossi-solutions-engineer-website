@@ -193,7 +193,7 @@ export const i18n = {
           ],
         },
         {
-          title: 'DJ de la Rossi – Künstlerwebsite',
+          title: 'DJ De la Rossi – Künstlerwebsite',
           scope: 'Web Development · Eigenprojekt',
           role: 'Web Development · AI-assisted Development',
           labels: { problem: 'Ausgangslage', solution: 'Umsetzung', highlights: 'Schwerpunkte' },
@@ -416,7 +416,7 @@ export const i18n = {
           ],
         },
         {
-          title: 'DJ de la Rossi – Artist Website',
+          title: 'DJ De la Rossi – Artist Website',
           scope: 'Web Development · Personal Project',
           role: 'Web Development · AI-assisted Development',
           labels: { problem: 'Challenge', solution: 'Implementation', highlights: 'Key points' },
