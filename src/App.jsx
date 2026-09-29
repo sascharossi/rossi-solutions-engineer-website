@@ -10,7 +10,7 @@ function readRoute() {
   return 'home'
 }
 
-const sections = ['about', 'services', 'stack', 'work', 'experience', 'contact']
+const sections = ['about', 'services', 'stack', 'projects', 'experience', 'contact']
 
 function initialLang() {
   try {
@@ -31,6 +31,29 @@ const Reveal = ({ children, delay = 0, className = '' }) => (
     {children}
   </motion.div>
 )
+
+// Datenfluss-Diagramm: Stufen von links nach rechts (mobil von oben nach unten), Knoten einer Stufe laufen parallel
+function Flow({ stages }) {
+  return (
+    <div className="flex flex-col md:flex-row md:items-stretch gap-2 md:gap-1">
+      {stages.map((nodes, i) => (
+        <div key={i} className="contents">
+          {i > 0 && (
+            <svg viewBox="0 0 24 24" className="w-5 h-5 self-center shrink-0 text-accent rotate-90 md:rotate-0" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" /></svg>
+          )}
+          <div className="flex flex-col justify-center gap-2 md:flex-1 min-w-0">
+            {nodes.map(([title, sub]) => (
+              <div key={title} className="rounded-xl border border-line bg-bg/70 px-3 py-2.5 text-center">
+                <p className="text-sm font-medium leading-snug">{title}</p>
+                {sub && <p className="mt-0.5 text-xs text-muted leading-snug">{sub}</p>}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
 
 const Heading = ({ label, title }) => (
   <Reveal className="mb-12">
@@ -210,6 +233,74 @@ export default function App() {
                       <span key={it} className="rounded-full border border-line bg-surface/70 px-3 py-1 text-sm text-slate-200 hover:border-accent/60 transition-colors">{it}</span>
                     ))}
                   </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Projekte */}
+        <section id="projects" className="px-6 py-24">
+          <div className="max-w-6xl mx-auto">
+            <Heading label={t.projects.label} title={t.projects.title} />
+            <Reveal className="-mt-6 mb-10"><p className="text-muted text-lg">{t.projects.intro}</p></Reveal>
+            <div className="space-y-8">
+              {t.projects.items.map((p, idx) => (
+                <Reveal key={p.title}>
+                  <article className="rounded-2xl border border-line bg-surface/70 p-6 md:p-8">
+                    <p className="font-mono text-sm text-accent">0{idx + 1} · {t.projects.context} · {p.scope}</p>
+                    <h3 className="mt-2 text-2xl md:text-3xl font-bold tracking-tight">{p.title}</h3>
+                    <p className="mt-1 text-sm text-muted">{t.projects.role}</p>
+                    <div className="mt-6 grid lg:grid-cols-2 gap-8">
+                      <div className="space-y-5">
+                        <div>
+                          <h4 className="font-mono text-xs uppercase tracking-widest text-accent mb-2">{t.projects.problem}</h4>
+                          <p className="text-muted leading-relaxed">{p.problem}</p>
+                        </div>
+                        <div>
+                          <h4 className="font-mono text-xs uppercase tracking-widest text-accent mb-2">{t.projects.solution}</h4>
+                          <p className="text-muted leading-relaxed">{p.solution}</p>
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="font-mono text-xs uppercase tracking-widest text-accent mb-2">{t.projects.highlights}</h4>
+                        <ul className="space-y-2">
+                          {p.points.map((pt) => (
+                            <li key={pt} className="flex gap-3 text-muted leading-relaxed">
+                              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+                              <span>{pt}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="mt-8">
+                      <h4 className="font-mono text-xs uppercase tracking-widest text-accent mb-3">{t.projects.results}</h4>
+                      <div className="grid sm:grid-cols-3 gap-3">
+                        {p.metrics.map(([value, label]) => (
+                          <div key={label} className="rounded-xl border border-line bg-bg/70 p-4">
+                            <p className="font-display text-3xl font-bold text-accent">{value}</p>
+                            <p className="mt-1 text-sm text-muted">{label}</p>
+                          </div>
+                        ))}
+                      </div>
+                      <ul className="mt-4 space-y-2">
+                        {p.results.map((r) => (
+                          <li key={r} className="flex gap-3 text-muted leading-relaxed">
+                            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+                            <span>{r}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="mt-8">
+                      <h4 className="font-mono text-xs uppercase tracking-widest text-accent mb-3">{t.projects.flow}</h4>
+                      <Flow stages={p.flow} />
+                    </div>
+                    <div className="mt-6 flex flex-wrap gap-2">
+                      {p.tags.map((tag) => <span key={tag} className="font-mono text-xs text-accent border border-accent-deep/60 rounded px-2 py-0.5">{tag}</span>)}
+                    </div>
+                  </article>
                 </Reveal>
               ))}
             </div>
