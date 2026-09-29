@@ -288,6 +288,7 @@ export const i18n = {
       title: 'Tech Stack',
       groups: { ai: 'AI & LLM', automation: 'Automation & Integration', data: 'Data Engineering', dev: 'Development & Web', cloud: 'Cloud & Infrastructure', analytics: 'Analytics & Platforms' },
       extraLabels: { analytics: 'Further platforms' },
+      rename: { Datenmodellierung: 'Data Modelling' },
     },
     work: {
       label: 'Focus',

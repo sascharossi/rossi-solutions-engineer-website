@@ -478,7 +478,7 @@ export default function App() {
                       <p className="text-sm text-muted leading-7">
                         {g.extra.map((it, n) => (
                           <Fragment key={it}>
-                            <span className="whitespace-nowrap">{it}{n < g.extra.length - 1 && <span aria-hidden="true" className="mx-2 text-accent-deep">·</span>}</span>{' '}
+                            <span className="whitespace-nowrap">{t.stack.rename?.[it] ?? it}{n < g.extra.length - 1 && <span aria-hidden="true" className="mx-2 text-accent-deep">·</span>}</span>{' '}
                           </Fragment>
                         ))}
                       </p>
