@@ -3,8 +3,6 @@ export const links = {
   linkedin: 'https://www.linkedin.com/in/sascha-rossi',
   xing: 'https://www.xing.com/profile/Sascha_Rossi',
   email: 's.rossi@flowint.de',
-  // Lebenslauf-PDF: liegt sie unter public/cv/Sascha_Rossi_Lebenslauf.pdf, erscheint der Button automatisch (siehe vite.config.js)
-  cv: import.meta.env.VITE_CV_PATH ? `${import.meta.env.BASE_URL}${import.meta.env.VITE_CV_PATH}` : null,
 }
 
 export const techStack = [
@@ -189,7 +187,7 @@ export const i18n = {
       label: 'Werdegang',
       title: 'Erfahrung',
       items: [
-        ['08/2026 – heute', 'Solutions Engineer', 'Reknova GmbH (SUMAX)', 'Webentwicklung und WordPress sind ein wesentlicher Teil meiner Arbeit. Dazu kommen AI-assisted Development, die Automatisierung von Marketing- und Geschäftsprozessen, Entwicklung und Integration von APIs, systemübergreifende Workflows, Reporting- und Analyse-Lösungen sowie die Integration von AI-/LLM-Komponenten. Technische Umsetzung von der Anforderungsanalyse über Entwicklung und Testing bis zur Integration.', ['Webentwicklung', 'WordPress', 'AI-assisted Development', 'APIs', 'Workflows', 'Reporting', 'LLM-Integration']],
+        ['08/2026 – heute', 'Solutions Engineer', 'Reknova GmbH', 'Webentwicklung und WordPress sind ein wesentlicher Teil meiner Arbeit. Dazu kommen AI-assisted Development, die Automatisierung von Marketing- und Geschäftsprozessen, Entwicklung und Integration von APIs, systemübergreifende Workflows, Reporting- und Analyse-Lösungen sowie die Integration von AI-/LLM-Komponenten. Technische Umsetzung von der Anforderungsanalyse über Entwicklung und Testing bis zur Integration.', ['Webentwicklung', 'WordPress', 'AI-assisted Development', 'APIs', 'Workflows', 'Reporting', 'LLM-Integration']],
         ['02/2025 – 07/2026', 'Data & Automation Engineer', 'MVZ Dr. Dr. Dorow GmbH', 'Entwicklung produktiver n8n- und Make-Workflows, API-Integrationen, PostgreSQL und Datenverarbeitung, Python-/Airflow-Datenpipelines, AWS-Infrastruktur, AI-gestützte Automatisierungen, Marketing- und Tracking-Analysen sowie Dashboards mit Power BI und Metabase. Zusätzlich Administration und Dokumentation der Marketing-IT.', ['n8n', 'Make', 'PostgreSQL', 'Python', 'Airflow', 'AWS', 'Power BI', 'Metabase']],
         ['05/2024 – 01/2025', 'Webentwickler (Praktikum)', 'Bitblades Solutions UG / Chaingateway', 'Backend mit PHP/Laravel, Frontend mit JavaScript, Vue.js und Livewire, Tailwind CSS, relationale Datenbanken, Redis, WebSockets und Jekyll. Mitarbeit an der Architektur eines Softwareprodukts.', ['PHP / Laravel', 'JavaScript', 'Vue.js', 'Livewire', 'Tailwind CSS', 'Redis', 'WebSockets', 'Jekyll']],
       ],
@@ -204,7 +202,6 @@ export const i18n = {
       title: 'Lass uns über die passende Zusammenarbeit sprechen.',
       text: 'Ob als Verstärkung für dein Team oder für einzelne Projekte.',
       mail: 'E-Mail schreiben',
-      cv: 'Lebenslauf herunterladen',
     },
     footer: 'Sascha Rossi · Solutions Engineer',
     langLabel: 'Sprache',
@@ -394,7 +391,7 @@ export const i18n = {
       label: 'Career',
       title: 'Experience',
       items: [
-        ['08/2026 – present', 'Solutions Engineer', 'Reknova GmbH (SUMAX)', 'Web development and WordPress are a substantial part of my work. On top of that come AI-assisted development, automation of marketing and business processes, development and integration of APIs, cross-system workflows, reporting and analytics solutions, and integration of AI/LLM components. Technical delivery from requirements analysis through development and testing to integration.', ['Web development', 'WordPress', 'AI-assisted development', 'APIs', 'Workflows', 'Reporting', 'LLM integration']],
+        ['08/2026 – present', 'Solutions Engineer', 'Reknova GmbH', 'Web development and WordPress are a substantial part of my work. On top of that come AI-assisted development, automation of marketing and business processes, development and integration of APIs, cross-system workflows, reporting and analytics solutions, and integration of AI/LLM components. Technical delivery from requirements analysis through development and testing to integration.', ['Web development', 'WordPress', 'AI-assisted development', 'APIs', 'Workflows', 'Reporting', 'LLM integration']],
         ['02/2025 – 07/2026', 'Data & Automation Engineer', 'MVZ Dr. Dr. Dorow GmbH', 'Development of production n8n and Make workflows, API integrations, PostgreSQL and data processing, Python/Airflow data pipelines, AWS infrastructure, AI-powered automations, marketing and tracking analyses, and dashboards with Power BI and Metabase. Additionally administration and documentation of marketing IT.', ['n8n', 'Make', 'PostgreSQL', 'Python', 'Airflow', 'AWS', 'Power BI', 'Metabase']],
         ['05/2024 – 01/2025', 'Web Developer (Internship)', 'Bitblades Solutions UG / Chaingateway', 'Backend with PHP/Laravel, frontend with JavaScript, Vue.js and Livewire, Tailwind CSS, relational databases, Redis, WebSockets and Jekyll. Contributed to the architecture of a software product.', ['PHP / Laravel', 'JavaScript', 'Vue.js', 'Livewire', 'Tailwind CSS', 'Redis', 'WebSockets', 'Jekyll']],
       ],
@@ -409,7 +406,6 @@ export const i18n = {
       title: "Let's talk about the right way to work together.",
       text: 'Whether as a reinforcement for your team or for individual projects.',
       mail: 'Send an email',
-      cv: 'Download CV',
     },
     footer: 'Sascha Rossi · Solutions Engineer',
     langLabel: 'Language',
