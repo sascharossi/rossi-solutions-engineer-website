@@ -18,7 +18,7 @@ export const techStack = [
 
 export const i18n = {
   de: {
-    nav: { about: 'Über mich', projects: 'Projekte', services: 'Leistungen', stack: 'Tech Stack', work: 'Projektfelder', experience: 'Erfahrung', contact: 'Kontakt' },
+    nav: { about: 'Über mich', projects: 'Projekte', stack: 'Tech Stack', work: 'Schwerpunkte', experience: 'Erfahrung', contact: 'Kontakt' },
     hero: {
       eyebrow: 'Hallo, ich bin',
       role: 'Solutions Engineer',
@@ -48,25 +48,14 @@ export const i18n = {
         ['2006', 'Ausbildung zum Bürokaufmann', ''],
       ],
     },
-    services: {
-      label: 'Schwerpunkte',
-      title: 'Leistungen',
-      items: [
-        ['AI & Automation', 'Automatisierte Workflows, LLM-Integration, Claude API, OpenAI API, Prompt Engineering, n8n, Make und AI-assisted Development.'],
-        ['Web Development', 'WordPress-Websites, individuelle Weblösungen, AI-gestützte Entwicklung, Frontend-/Backend-Integration sowie API-basierte Funktionen.'],
-        ['API & System Integration', 'Verbindung unterschiedlicher Anwendungen, SaaS-Plattformen und Datenquellen über REST APIs, Webhooks und automatisierte Prozesse.'],
-        ['Data Engineering & Analytics', 'SQL/PostgreSQL, Python, ETL/ELT, Apache Airflow, Datenpipelines, Power BI, Metabase sowie Marketing- und Reporting-Daten.'],
-        ['Cloud & Infrastructure', 'AWS-Infrastruktur, Docker, Linux/VPS und Self-Hosting für Daten-, Automatisierungs- und Integrationslösungen.'],
-      ],
-    },
     stack: {
       label: 'Fähigkeiten',
       title: 'Tech Stack',
       groups: { ai: 'AI & LLM', automation: 'Automation', dev: 'Development', web: 'Web', data: 'Data', analytics: 'Analytics', cloud: 'Cloud & Infra', platforms: 'Plattformen' },
     },
     work: {
-      label: 'Portfolio',
-      title: 'Projektfelder',
+      label: 'Fokus',
+      title: 'Schwerpunkte',
       items: [
         ['AI & Workflow Automation', 'Produktive Automatisierungen mit n8n, APIs und LLMs inklusive Trigger-Logik, Datenverarbeitung, Fehlerbehandlung, Validierung und Monitoring.', ['n8n', 'LLMs', 'APIs']],
         ['AI-assisted Web Development', 'Entwicklung von Websites und digitalen Lösungen mit AI-gestützten Entwicklungswerkzeugen sowie Integration von APIs, Automatisierungen und externen Services.', ['WordPress', 'AI-assisted', 'APIs']],
@@ -217,7 +206,7 @@ export const i18n = {
     footerLinks: { impressum: 'Impressum', datenschutz: 'Datenschutz' },
   },
   en: {
-    nav: { about: 'About', projects: 'Projects', services: 'Services', stack: 'Tech Stack', work: 'Focus Areas', experience: 'Experience', contact: 'Contact' },
+    nav: { about: 'About', projects: 'Projects', stack: 'Tech Stack', work: 'Focus Areas', experience: 'Experience', contact: 'Contact' },
     hero: {
       eyebrow: "Hi, I'm",
       role: 'Solutions Engineer',
@@ -247,24 +236,13 @@ export const i18n = {
         ['2006', 'Apprenticeship as Office Clerk (Bürokaufmann)', ''],
       ],
     },
-    services: {
-      label: 'Focus',
-      title: 'Services',
-      items: [
-        ['AI & Automation', 'Automated workflows, LLM integration, Claude API, OpenAI API, prompt engineering, n8n, Make and AI-assisted development.'],
-        ['Web Development', 'WordPress websites, custom web solutions, AI-assisted development, frontend/backend integration and API-based features.'],
-        ['API & System Integration', 'Connecting different applications, SaaS platforms and data sources via REST APIs, webhooks and automated processes.'],
-        ['Data Engineering & Analytics', 'SQL/PostgreSQL, Python, ETL/ELT, Apache Airflow, data pipelines, Power BI, Metabase as well as marketing and reporting data.'],
-        ['Cloud & Infrastructure', 'AWS infrastructure, Docker, Linux/VPS and self-hosting for data, automation and integration solutions.'],
-      ],
-    },
     stack: {
       label: 'Capabilities',
       title: 'Tech Stack',
       groups: { ai: 'AI & LLM', automation: 'Automation', dev: 'Development', web: 'Web', data: 'Data', analytics: 'Analytics', cloud: 'Cloud & Infra', platforms: 'Platforms' },
     },
     work: {
-      label: 'Portfolio',
+      label: 'Focus',
       title: 'Focus Areas',
       items: [
         ['AI & Workflow Automation', 'Production automations with n8n, APIs and LLMs, including trigger logic, data processing, error handling, validation and monitoring.', ['n8n', 'LLMs', 'APIs']],

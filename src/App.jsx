@@ -10,7 +10,7 @@ function readRoute() {
   return 'home'
 }
 
-const sections = ['about', 'services', 'stack', 'projects', 'experience', 'contact']
+const sections = ['about', 'stack', 'work', 'projects', 'experience', 'contact']
 
 function initialLang() {
   try {
@@ -202,24 +202,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* Leistungen */}
-        <section id="services" className="px-6 py-24">
-          <div className="max-w-6xl mx-auto">
-            <Heading label={t.services.label} title={t.services.title} />
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {t.services.items.map(([title, text], i) => (
-                <Reveal key={title} delay={i * 0.06}>
-                  <div className="h-full rounded-2xl border border-line bg-surface/70 p-6 hover:border-accent/60 transition-colors">
-                    <span className="font-mono text-accent text-sm">0{i + 1}</span>
-                    <h3 className="mt-3 text-xl font-semibold">{title}</h3>
-                    <p className="mt-3 text-muted leading-relaxed">{text}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Tech Stack */}
         <section id="stack" className="px-6 py-24">
           <div className="max-w-6xl mx-auto">
@@ -233,6 +215,26 @@ export default function App() {
                       <span key={it} className="rounded-full border border-line bg-surface/70 px-3 py-1 text-sm text-slate-200 hover:border-accent/60 transition-colors">{it}</span>
                     ))}
                   </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Projektfelder */}
+        <section id="work" className="px-6 py-24">
+          <div className="max-w-6xl mx-auto">
+            <Heading label={t.work.label} title={t.work.title} />
+            <div className="grid md:grid-cols-2 gap-5">
+              {t.work.items.map(([title, text, tags], i) => (
+                <Reveal key={title} delay={(i % 2) * 0.08}>
+                  <article className="h-full rounded-2xl border border-line bg-gradient-to-br from-surface to-bg p-7 hover:border-accent/60 transition-colors">
+                    <h3 className="text-xl font-semibold">{title}</h3>
+                    <p className="mt-3 text-muted leading-relaxed">{text}</p>
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {tags.map((tag) => <span key={tag} className="font-mono text-xs text-accent border border-accent-deep/60 rounded px-2 py-0.5">{tag}</span>)}
+                    </div>
+                  </article>
                 </Reveal>
               ))}
             </div>
@@ -299,26 +301,6 @@ export default function App() {
                     </div>
                     <div className="mt-6 flex flex-wrap gap-2">
                       {p.tags.map((tag) => <span key={tag} className="font-mono text-xs text-accent border border-accent-deep/60 rounded px-2 py-0.5">{tag}</span>)}
-                    </div>
-                  </article>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Projektfelder */}
-        <section id="work" className="px-6 py-24">
-          <div className="max-w-6xl mx-auto">
-            <Heading label={t.work.label} title={t.work.title} />
-            <div className="grid md:grid-cols-2 gap-5">
-              {t.work.items.map(([title, text, tags], i) => (
-                <Reveal key={title} delay={(i % 2) * 0.08}>
-                  <article className="h-full rounded-2xl border border-line bg-gradient-to-br from-surface to-bg p-7 hover:border-accent/60 transition-colors">
-                    <h3 className="text-xl font-semibold">{title}</h3>
-                    <p className="mt-3 text-muted leading-relaxed">{text}</p>
-                    <div className="mt-5 flex flex-wrap gap-2">
-                      {tags.map((tag) => <span key={tag} className="font-mono text-xs text-accent border border-accent-deep/60 rounded px-2 py-0.5">{tag}</span>)}
                     </div>
                   </article>
                 </Reveal>
