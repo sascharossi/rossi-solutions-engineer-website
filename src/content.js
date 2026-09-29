@@ -67,7 +67,7 @@ export const i18n = {
     projects: {
       label: 'Fallbeispiele',
       title: 'Ausgewählte Projekte',
-      intro: 'Drei produktive Lösungen aus dem Gesundheitswesen, anonymisiert dargestellt.',
+      intro: 'Drei produktive Lösungen aus der Praxis, anonymisiert dargestellt.',
       role: 'Data & Automation Engineer',
       problem: 'Ausgangslage',
       solution: 'Lösung',
@@ -254,7 +254,7 @@ export const i18n = {
     projects: {
       label: 'Case studies',
       title: 'Selected Projects',
-      intro: 'Three production solutions from the healthcare sector, shown anonymised.',
+      intro: 'Three production solutions from real-world practice, shown anonymised.',
       role: 'Data & Automation Engineer',
       problem: 'Starting point',
       solution: 'Solution',
