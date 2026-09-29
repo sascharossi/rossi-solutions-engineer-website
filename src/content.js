@@ -1,0 +1,230 @@
+// Alle Texte der Seite. Inhalte: Sascha_Rossi_Website_Inhalte_2026.pdf (DE), EN sinngemäß übersetzt.
+export const links = {
+  linkedin: 'https://www.linkedin.com/in/sascha-rossi-4325a893',
+  xing: 'https://www.xing.com/profile/Sascha_Rossi',
+  email: 's.rossi@flowint.de',
+}
+
+export const techStack = [
+  { key: 'ai', items: ['Claude API', 'OpenAI API', 'Prompt Engineering', 'LLM Integration', 'MCP', 'Structured Outputs', 'AI-assisted Development'] },
+  { key: 'automation', items: ['n8n', 'Make', 'Workflow Automation', 'REST APIs', 'Webhooks', 'API Integration'] },
+  { key: 'dev', items: ['Python', 'JavaScript', 'PHP', 'SQL', 'Laravel', 'Vue.js', 'Livewire', 'HTML5', 'Tailwind CSS'] },
+  { key: 'web', items: ['WordPress', 'AI-assisted Web Development', 'Jekyll', 'API-basierte Webintegrationen'] },
+  { key: 'data', items: ['PostgreSQL', 'Apache Airflow', 'ETL/ELT', 'Data Pipelines', 'Datenmodellierung', 'SQL Views'] },
+  { key: 'analytics', items: ['Power BI', 'Metabase', 'Marketing Analytics', 'Tracking', 'Reporting'] },
+  { key: 'cloud', items: ['AWS S3', 'EC2', 'RDS', 'IAM', 'EBS', 'Docker', 'Linux', 'VPS', 'Self-Hosting'] },
+  { key: 'platforms', items: ['Google Workspace', 'Microsoft 365', 'Meta Graph API', 'Asana', 'KlickTipp', 'Webinargeek'] },
+]
+
+export const i18n = {
+  de: {
+    nav: { about: 'Über mich', services: 'Leistungen', stack: 'Tech Stack', work: 'Projektfelder', experience: 'Erfahrung', contact: 'Kontakt' },
+    hero: {
+      eyebrow: 'Hallo, ich bin',
+      role: 'Solutions Engineer',
+      areas: 'AI Automation · Web Development · Data Engineering',
+      claim: 'Web. Automation. Data. AI.',
+      text: 'Ich entwickle digitale Lösungen, die Anwendungen, Daten und Geschäftsprozesse miteinander verbinden – von modernen Websites und Webanwendungen über APIs und automatisierte Workflows bis hin zu Datenpipelines, Reporting-Lösungen und AI-gestützten Prozessen.',
+      cta: 'Kontakt aufnehmen',
+      cta2: 'Mehr erfahren',
+      scroll: 'Scrollen',
+    },
+    about: {
+      label: 'Über mich',
+      title: 'Technik, die Prozesse wirklich besser macht.',
+      paras: [
+        'Als Solutions Engineer verbinde ich Software- und Webentwicklung mit Prozessautomatisierung, Data Engineering und modernen AI-Technologien. Mein Schwerpunkt liegt darauf, technische Möglichkeiten in funktionierende, wartbare Lösungen für reale Geschäftsprozesse zu übersetzen.',
+        'Mein Hintergrund reicht von Webentwicklung und API-Integration über PostgreSQL, Datenpipelines und Cloud-Infrastruktur bis zu produktiven n8n- und Make-Automatisierungen. AI nutze ich sowohl innerhalb von Anwendungen und Workflows als auch aktiv im Entwicklungsprozess.',
+        'Durch meine frühere Erfahrung in Teamleitung, Einkauf, Logistik und operativer Verantwortung betrachte ich Technik nicht isoliert: Entscheidend ist, ob eine Lösung einen Prozess vereinfacht, zuverlässig funktioniert und einen konkreten geschäftlichen Nutzen schafft.',
+      ],
+      eduTitle: 'Ausbildung & Qualifikationen',
+      education: [
+        ['2025', 'Fachinformatiker für Anwendungsentwicklung (IHK)', 'GFN Donaueschingen'],
+        ['2025', 'Künstliche Intelligenz im Online-Marketing', '121WATT'],
+        ['2023', 'EXIN Agile Scrum Foundation', ''],
+        ['2019', 'Fachwirt für Logistiksysteme (IHK)', 'Abschluss: sehr gut'],
+        ['2014', 'Sachbearbeiter Einkauf', 'Procure Fachverband'],
+        ['2011', 'Fachhochschulreife', ''],
+        ['2006', 'Ausbildung zum Bürokaufmann', ''],
+      ],
+    },
+    services: {
+      label: 'Schwerpunkte',
+      title: 'Leistungen',
+      items: [
+        ['AI & Automation', 'Automatisierte Workflows, LLM-Integration, Claude API, OpenAI API, Prompt Engineering, n8n, Make und AI-assisted Development.'],
+        ['Web Development', 'WordPress-Websites, individuelle Weblösungen, AI-gestützte Entwicklung, Frontend-/Backend-Integration sowie API-basierte Funktionen.'],
+        ['API & System Integration', 'Verbindung unterschiedlicher Anwendungen, SaaS-Plattformen und Datenquellen über REST APIs, Webhooks und automatisierte Prozesse.'],
+        ['Data Engineering & Analytics', 'SQL/PostgreSQL, Python, ETL/ELT, Apache Airflow, Datenpipelines, Power BI, Metabase sowie Marketing- und Reporting-Daten.'],
+        ['Cloud & Infrastructure', 'AWS-Infrastruktur, Docker, Linux/VPS und Self-Hosting für Daten-, Automatisierungs- und Integrationslösungen.'],
+      ],
+    },
+    stack: {
+      label: 'Fähigkeiten',
+      title: 'Tech Stack',
+      groups: { ai: 'AI & LLM', automation: 'Automation', dev: 'Development', web: 'Web', data: 'Data', analytics: 'Analytics', cloud: 'Cloud & Infra', platforms: 'Plattformen' },
+    },
+    work: {
+      label: 'Portfolio',
+      title: 'Projektfelder',
+      items: [
+        ['AI & Workflow Automation', 'Produktive Automatisierungen mit n8n, APIs und LLMs inklusive Trigger-Logik, Datenverarbeitung, Fehlerbehandlung, Validierung und Monitoring.', ['n8n', 'LLMs', 'APIs']],
+        ['AI-assisted Web Development', 'Entwicklung von Websites und digitalen Lösungen mit AI-gestützten Entwicklungswerkzeugen sowie Integration von APIs, Automatisierungen und externen Services.', ['WordPress', 'AI-assisted', 'APIs']],
+        ['Data Pipelines & Analytics', 'Automatisierte Datenflüsse zwischen Datenquellen, PostgreSQL, Cloud-Infrastruktur und BI-/Reporting-Systemen.', ['PostgreSQL', 'Airflow', 'Power BI']],
+        ['API & System Integration', 'Vernetzung von SaaS-, Marketing-, Daten- und Unternehmenssystemen über REST APIs, Webhooks und automatisierte Workflows.', ['REST', 'Webhooks', 'SaaS']],
+        ['Cloud & Self-Hosted Infrastructure', 'AWS- sowie Linux-/Docker-basierte Infrastrukturen für Datenverarbeitung, Automatisierung und interne Anwendungen.', ['AWS', 'Docker', 'Linux']],
+      ],
+    },
+    experience: {
+      label: 'Werdegang',
+      title: 'Erfahrung',
+      items: [
+        ['08/2026 – heute', 'Solutions Engineer', 'Reknova GmbH', 'Webentwicklung und WordPress, AI-assisted Development, Automatisierung von Marketing- und Geschäftsprozessen, Entwicklung und Integration von APIs, systemübergreifende Workflows, Reporting- und Analyse-Lösungen sowie Integration von AI-/LLM-Komponenten. Technische Umsetzung von der Anforderungsanalyse über Entwicklung und Testing bis zur Integration.'],
+        ['02/2025 – 07/2026', 'Data & Automation Engineer', 'MVZ Dr. Dr. Dorow GmbH', 'Entwicklung produktiver n8n- und Make-Workflows, API-Integrationen, PostgreSQL und Datenverarbeitung, Python-/Airflow-Datenpipelines, AWS-Infrastruktur, AI-gestützte Automatisierungen, Marketing- und Tracking-Analysen sowie Dashboards mit Power BI und Metabase. Zusätzlich Administration und Dokumentation der Marketing-IT.'],
+        ['05/2024 – 01/2025', 'Webentwickler (Praktikum)', 'Bitblades Solutions UG / Chaingateway', 'Backend mit PHP/Laravel, Frontend mit JavaScript, Vue.js und Livewire, Tailwind CSS, relationale Datenbanken, Redis, WebSockets und Jekyll. Mitarbeit an der Architektur eines Softwareprodukts.'],
+      ],
+      earlierTitle: 'Frühere Erfahrung',
+      earlier: 'Teamleitung und Personalverantwortung · Freelancer in der Eventbranche · Teamleitung Logistik / Transport · Technischer Einkauf und Außendienst. Diese Stationen ergänzen den technischen Hintergrund um Prozessverständnis, Kundenorientierung, Organisation und operative Verantwortung.',
+    },
+    contact: {
+      label: 'Kontakt',
+      title: 'Du hast einen Prozess, eine Website oder eine Systemlandschaft, die smarter werden soll?',
+      text: 'Lass uns über eine passende technische Lösung sprechen.',
+      mail: 'E-Mail schreiben',
+    },
+    footer: 'Sascha Rossi · Solutions Engineer',
+    langLabel: 'Sprache',
+    legal: {
+      back: '← Zurück zur Startseite',
+      impressum: {
+        title: 'Impressum',
+        blocks: [
+          ['Angaben gemäß § 5 DDG', ['Sascha Rossi', 'Bahnhofstr. 28', '79848 Bonndorf im Schwarzwald', 'Deutschland']],
+          ['Kontakt', ['E-Mail: s.rossi@flowint.de']],
+          ['Umsatzsteuer', ['Kleinunternehmer im Sinne von § 19 UStG. Es wird keine Umsatzsteuer ausgewiesen.']],
+          ['Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV', ['Sascha Rossi, Anschrift wie oben']],
+          ['Haftung für Inhalte', ['Als Diensteanbieter bin ich nach den allgemeinen Gesetzen für eigene Inhalte auf diesen Seiten verantwortlich. Nach §§ 8 bis 10 DDG bin ich jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Bei Bekanntwerden entsprechender Rechtsverletzungen entferne ich diese Inhalte umgehend.']],
+          ['Haftung für Links', ['Diese Seite enthält Links zu externen Websites Dritter (LinkedIn, XING), auf deren Inhalte ich keinen Einfluss habe. Für diese fremden Inhalte kann ich keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter verantwortlich.']],
+        ],
+      },
+      datenschutz: {
+        title: 'Datenschutzerklärung',
+        blocks: [
+          ['1. Verantwortlicher', ['Sascha Rossi, Bahnhofstr. 28, 79848 Bonndorf im Schwarzwald, Deutschland', 'E-Mail: s.rossi@flowint.de']],
+          ['2. Hosting über GitHub Pages', ['Diese Website wird über GitHub Pages betrieben. Anbieter ist die GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Beim Aufruf der Seite verarbeitet der Anbieter technisch notwendige Daten in Server-Logfiles, insbesondere die IP-Adresse, Datum und Uhrzeit des Zugriffs, die aufgerufene Seite sowie Browser- und Systeminformationen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren und stabilen Bereitstellung der Website).', 'Dabei kann eine Übermittlung von Daten in die USA stattfinden. Die Übermittlung stützt sich auf den Angemessenheitsbeschluss der EU-Kommission (EU-US Data Privacy Framework) bzw. auf Standardvertragsklauseln.']],
+          ['3. Keine Cookies, kein Tracking', ['Diese Website setzt keine Cookies und verwendet keine Analyse- oder Tracking-Werkzeuge. Schriftarten werden lokal von dieser Website ausgeliefert, es werden keine Daten an Google oder andere Schriftanbieter übertragen.', 'Die gewählte Sprache (Deutsch/Englisch) wird ausschließlich im lokalen Speicher deines Browsers abgelegt, damit sie beim nächsten Besuch erhalten bleibt. Diese Information wird nicht an mich oder Dritte übertragen und enthält keine personenbezogenen Daten.']],
+          ['4. Externe Links', ['Die Website verlinkt auf LinkedIn und XING. Erst wenn du einen dieser Links anklickst, werden Daten an den jeweiligen Anbieter übertragen. Für die Datenverarbeitung dort gelten die Datenschutzerklärungen der Anbieter.']],
+          ['5. Kontaktaufnahme per E-Mail', ['Wenn du mir eine E-Mail schreibst, verarbeite ich deine Angaben (E-Mail-Adresse, Inhalt der Nachricht) zur Bearbeitung deiner Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b bzw. lit. f DSGVO. Die Daten werden gelöscht, sobald sie für den Zweck nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.']],
+          ['6. Deine Rechte', ['Du hast das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21). Wende dich dafür an die oben genannte E-Mail-Adresse.', 'Außerdem hast du das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Zuständig ist der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg, Lautenschlagerstraße 20, 70173 Stuttgart.']],
+          ['Stand', ['September 2026']],
+        ],
+      },
+    },
+    footerLinks: { impressum: 'Impressum', datenschutz: 'Datenschutz' },
+  },
+  en: {
+    nav: { about: 'About', services: 'Services', stack: 'Tech Stack', work: 'Focus Areas', experience: 'Experience', contact: 'Contact' },
+    hero: {
+      eyebrow: "Hi, I'm",
+      role: 'Solutions Engineer',
+      areas: 'AI Automation · Web Development · Data Engineering',
+      claim: 'Web. Automation. Data. AI.',
+      text: 'I build digital solutions that connect applications, data and business processes – from modern websites and web applications to APIs and automated workflows, data pipelines, reporting solutions and AI-powered processes.',
+      cta: 'Get in touch',
+      cta2: 'Learn more',
+      scroll: 'Scroll',
+    },
+    about: {
+      label: 'About',
+      title: 'Technology that actually improves processes.',
+      paras: [
+        'As a Solutions Engineer, I combine software and web development with process automation, data engineering and modern AI technologies. My focus is on turning technical possibilities into working, maintainable solutions for real business processes.',
+        'My background ranges from web development and API integration to PostgreSQL, data pipelines and cloud infrastructure, through to production n8n and Make automations. I use AI both inside applications and workflows and actively as part of the development process.',
+        'Thanks to my earlier experience in team leadership, purchasing, logistics and operational responsibility, I never look at technology in isolation: what matters is whether a solution simplifies a process, works reliably and delivers concrete business value.',
+      ],
+      eduTitle: 'Education & Qualifications',
+      education: [
+        ['2025', 'IT Specialist for Application Development (IHK)', 'GFN Donaueschingen'],
+        ['2025', 'Artificial Intelligence in Online Marketing', '121WATT'],
+        ['2023', 'EXIN Agile Scrum Foundation', ''],
+        ['2019', 'Certified Logistics Systems Specialist (IHK)', 'Grade: very good'],
+        ['2014', 'Purchasing Clerk', 'Procure Fachverband'],
+        ['2011', 'Advanced Technical College Entrance Qualification (Fachhochschulreife)', ''],
+        ['2006', 'Apprenticeship as Office Clerk (Bürokaufmann)', ''],
+      ],
+    },
+    services: {
+      label: 'Focus',
+      title: 'Services',
+      items: [
+        ['AI & Automation', 'Automated workflows, LLM integration, Claude API, OpenAI API, prompt engineering, n8n, Make and AI-assisted development.'],
+        ['Web Development', 'WordPress websites, custom web solutions, AI-assisted development, frontend/backend integration and API-based features.'],
+        ['API & System Integration', 'Connecting different applications, SaaS platforms and data sources via REST APIs, webhooks and automated processes.'],
+        ['Data Engineering & Analytics', 'SQL/PostgreSQL, Python, ETL/ELT, Apache Airflow, data pipelines, Power BI, Metabase as well as marketing and reporting data.'],
+        ['Cloud & Infrastructure', 'AWS infrastructure, Docker, Linux/VPS and self-hosting for data, automation and integration solutions.'],
+      ],
+    },
+    stack: {
+      label: 'Capabilities',
+      title: 'Tech Stack',
+      groups: { ai: 'AI & LLM', automation: 'Automation', dev: 'Development', web: 'Web', data: 'Data', analytics: 'Analytics', cloud: 'Cloud & Infra', platforms: 'Platforms' },
+    },
+    work: {
+      label: 'Portfolio',
+      title: 'Focus Areas',
+      items: [
+        ['AI & Workflow Automation', 'Production automations with n8n, APIs and LLMs, including trigger logic, data processing, error handling, validation and monitoring.', ['n8n', 'LLMs', 'APIs']],
+        ['AI-assisted Web Development', 'Building websites and digital solutions with AI-assisted development tools, plus integration of APIs, automations and external services.', ['WordPress', 'AI-assisted', 'APIs']],
+        ['Data Pipelines & Analytics', 'Automated data flows between data sources, PostgreSQL, cloud infrastructure and BI/reporting systems.', ['PostgreSQL', 'Airflow', 'Power BI']],
+        ['API & System Integration', 'Connecting SaaS, marketing, data and enterprise systems via REST APIs, webhooks and automated workflows.', ['REST', 'Webhooks', 'SaaS']],
+        ['Cloud & Self-Hosted Infrastructure', 'AWS and Linux/Docker-based infrastructure for data processing, automation and internal applications.', ['AWS', 'Docker', 'Linux']],
+      ],
+    },
+    experience: {
+      label: 'Career',
+      title: 'Experience',
+      items: [
+        ['08/2026 – present', 'Solutions Engineer', 'Reknova GmbH', 'Web development and WordPress, AI-assisted development, automation of marketing and business processes, development and integration of APIs, cross-system workflows, reporting and analytics solutions, and integration of AI/LLM components. Technical delivery from requirements analysis through development and testing to integration.'],
+        ['02/2025 – 07/2026', 'Data & Automation Engineer', 'MVZ Dr. Dr. Dorow GmbH', 'Development of production n8n and Make workflows, API integrations, PostgreSQL and data processing, Python/Airflow data pipelines, AWS infrastructure, AI-powered automations, marketing and tracking analyses, and dashboards with Power BI and Metabase. Additionally administration and documentation of marketing IT.'],
+        ['05/2024 – 01/2025', 'Web Developer (Internship)', 'Bitblades Solutions UG / Chaingateway', 'Backend with PHP/Laravel, frontend with JavaScript, Vue.js and Livewire, Tailwind CSS, relational databases, Redis, WebSockets and Jekyll. Contributed to the architecture of a software product.'],
+      ],
+      earlierTitle: 'Earlier experience',
+      earlier: 'Team leadership and staff responsibility · Freelancer in the event industry · Team lead logistics / transport · Technical purchasing and field sales. These roles add process understanding, customer orientation, organisation and operational responsibility to my technical background.',
+    },
+    contact: {
+      label: 'Contact',
+      title: 'Have a process, a website or a system landscape that should get smarter?',
+      text: "Let's talk about the right technical solution.",
+      mail: 'Send an email',
+    },
+    footer: 'Sascha Rossi · Solutions Engineer',
+    langLabel: 'Language',
+    legal: {
+      back: '← Back to home',
+      impressum: {
+        title: 'Legal Notice',
+        blocks: [
+          ['Information pursuant to § 5 DDG', ['Sascha Rossi', 'Bahnhofstr. 28', '79848 Bonndorf im Schwarzwald', 'Germany']],
+          ['Contact', ['Email: s.rossi@flowint.de']],
+          ['Value added tax', ['Small business owner within the meaning of § 19 UStG. No VAT is charged.']],
+          ['Responsible for content under § 18 (2) MStV', ['Sascha Rossi, address as above']],
+          ['Liability for content', ['As a service provider, I am responsible for my own content on these pages under the general laws. Under §§ 8 to 10 DDG, however, I am not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate unlawful activity. Once I become aware of such infringements, I will remove the content immediately.']],
+          ['Liability for links', ['This site contains links to external third-party websites (LinkedIn, XING) over whose content I have no influence. I cannot accept any liability for this third-party content. The respective provider is always responsible for the content of the linked pages.']],
+        ],
+      },
+      datenschutz: {
+        title: 'Privacy Policy',
+        blocks: [
+          ['1. Controller', ['Sascha Rossi, Bahnhofstr. 28, 79848 Bonndorf im Schwarzwald, Germany', 'Email: s.rossi@flowint.de']],
+          ['2. Hosting via GitHub Pages', ['This website is hosted on GitHub Pages, provided by GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. When you visit the site, the provider processes technically necessary data in server log files, in particular your IP address, date and time of access, the page requested and browser and system information. The legal basis is Art. 6 (1) (f) GDPR (legitimate interest in providing the website securely and reliably).', 'Data may be transferred to the USA. The transfer relies on the European Commission’s adequacy decision (EU-US Data Privacy Framework) or standard contractual clauses.']],
+          ['3. No cookies, no tracking', ['This website does not set cookies and does not use analytics or tracking tools. Fonts are served locally from this website; no data is sent to Google or other font providers.', 'Your chosen language (German/English) is stored only in your browser’s local storage so that it is remembered on your next visit. This information is not transmitted to me or to third parties and contains no personal data.']],
+          ['4. External links', ['This website links to LinkedIn and XING. Data is only transferred to the respective provider once you click one of these links. The providers’ own privacy policies apply to processing there.']],
+          ['5. Contact by email', ['If you email me, I process your details (email address, message content) to handle your request. The legal basis is Art. 6 (1) (b) or (f) GDPR. The data is deleted once it is no longer needed for its purpose and no statutory retention duties apply.']],
+          ['6. Your rights', ['You have the right of access (Art. 15 GDPR), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20) and objection (Art. 21). Please contact me at the email address above.', 'You also have the right to lodge a complaint with a data protection supervisory authority. The competent authority is the State Commissioner for Data Protection and Freedom of Information Baden-Württemberg (LfDI), Lautenschlagerstraße 20, 70173 Stuttgart, Germany.']],
+          ['Last updated', ['September 2026']],
+        ],
+      },
+    },
+    footerLinks: { impressum: 'Legal Notice', datenschutz: 'Privacy Policy' },
+  },
+}
