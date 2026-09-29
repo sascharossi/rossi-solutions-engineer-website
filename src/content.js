@@ -99,7 +99,7 @@ export const i18n = {
     projects: {
       label: 'Fallbeispiele',
       title: 'Ausgewählte Projekte',
-      intro: 'Drei produktive Lösungen aus der Praxis, anonymisiert dargestellt.',
+      intro: 'Drei produktive Lösungen aus der Praxis und ein eigenständiges Webprojekt.',
       role: 'Data & Automation Engineer',
       principleLabel: 'Engineering-Entscheidung',
       problem: 'Ausgangslage',
@@ -322,7 +322,7 @@ export const i18n = {
     projects: {
       label: 'Case studies',
       title: 'Selected Projects',
-      intro: 'Three production solutions from real-world practice, shown anonymised.',
+      intro: 'Three production solutions from real-world practice and one independent web project.',
       role: 'Data & Automation Engineer',
       principleLabel: 'Engineering decision',
       problem: 'Starting point',
