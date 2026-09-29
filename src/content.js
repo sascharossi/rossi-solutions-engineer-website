@@ -1,6 +1,6 @@
 // Alle Texte der Seite. Inhalte: Sascha_Rossi_Website_Inhalte_2026.pdf (DE), EN sinngemäß übersetzt.
 export const links = {
-  linkedin: 'https://www.linkedin.com/in/sascha-rossi-4325a893',
+  linkedin: 'https://www.linkedin.com/in/sascha-rossi',
   xing: 'https://www.xing.com/profile/Sascha_Rossi',
   email: 's.rossi@flowint.de',
 }
