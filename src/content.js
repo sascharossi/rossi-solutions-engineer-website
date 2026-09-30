@@ -58,13 +58,17 @@ export const i18n = {
       paras: [
         'Als Solutions Engineer verbinde ich Software- und Webentwicklung mit Prozessautomatisierung, Data Engineering und modernen AI-Technologien. Mein Schwerpunkt liegt darauf, technische Möglichkeiten in funktionierende, wartbare Lösungen für reale Geschäftsprozesse zu übersetzen.',
         'Mein Hintergrund reicht von Webentwicklung und API-Integration über PostgreSQL, Datenpipelines und Cloud-Infrastruktur bis zu produktiven n8n- und Make-Automatisierungen. AI nutze ich sowohl innerhalb von Anwendungen und Workflows als auch aktiv im Entwicklungsprozess.',
-        'Vor meiner IT-Laufbahn habe ich unter anderem in Teamleitung und Personalverantwortung, im Einkauf, in Logistik und Transport, im Außendienst und selbstständig in der Eventbranche gearbeitet. Deshalb betrachte ich Technik nicht isoliert, sondern verstehe Geschäftsprozesse und betriebliche Anforderungen. Entscheidend ist, ob eine Lösung einen Prozess vereinfacht, zuverlässig funktioniert und einen konkreten geschäftlichen Nutzen schafft.',
       ],
       connectTitle: 'Was ich verbinde',
       connect: ['Softwareentwicklung', 'Webentwicklung', 'Prozessautomatisierung', 'Data Engineering', 'APIs', 'AI / LLM', 'Cloud-Infrastruktur'],
-      beforeTitle: 'Vor der IT-Laufbahn',
-      before: ['Teamleitung', 'Personalverantwortung', 'Einkauf', 'Logistik / Transport', 'Außendienst', 'Operative Verantwortung', 'Selbstständigkeit in der Eventbranche'],
-      quote: 'Technisches Know-how trifft auf langjährige operative Erfahrung.',
+    },
+    background: {
+      label: 'Hintergrund',
+      title: 'Technisches Know-how trifft auf langjährige operative Erfahrung.',
+      paras: [
+        'Vor meiner IT-Laufbahn habe ich über viele Jahre in operativen und verantwortlichen Rollen gearbeitet – unter anderem in Teamleitung und Personalverantwortung, Logistik und Transport, Einkauf, Außendienst sowie selbstständig in der Eventbranche.',
+        'Diese Erfahrung prägt heute meine technische Arbeit: Ich betrachte Anforderungen nicht nur aus Sicht von Code und Systemen, sondern auch aus Sicht der Menschen, Abläufe und betrieblichen Realität dahinter.',
+      ],
     },
     education: {
       label: 'Qualifikationen',
@@ -109,6 +113,7 @@ export const i18n = {
       flow: 'Datenfluss',
       items: [
         {
+          tab: 'Social Moderation',
           title: 'Automatische Moderation von Social-Media-Kommentaren',
           scope: 'Instagram · Facebook',
           principle: 'Deterministische Regeln zuerst, ein LLM nur dort, wo eine semantische Bewertung nötig ist. Nicht jeder Kommentar wird an ein LLM geschickt.',
@@ -138,6 +143,7 @@ export const i18n = {
           ],
         },
         {
+          tab: 'Booking Workflow',
           title: 'Buchungs-Workflow für Drehtermine',
           scope: 'Internes Social-Media-Team',
           problem: 'Anfragen für Drehtermine sollen strukturiert erfasst, freigegeben und automatisch in Kalender und Übersicht übernommen werden, mit sparsamem Umgang mit personenbezogenen Daten.',
@@ -165,6 +171,7 @@ export const i18n = {
           ],
         },
         {
+          tab: 'Data Pipeline',
           title: 'Tägliche Kontakt-Synchronisierung ins Newsletter-System',
           scope: '6 Standorte',
           problem: 'Kontakte aus mehreren Standort-Systemen sollen automatisch, sicher und dubletten-frei im Newsletter-System ankommen. Abgemeldete Personen müssen dauerhaft ausgeschlossen bleiben.',
@@ -193,6 +200,7 @@ export const i18n = {
           ],
         },
         {
+          tab: 'DJ Website',
           title: 'DJ De la Rossi – Künstlerwebsite',
           scope: 'Web Development · Eigenprojekt',
           role: 'Web Development · AI-assisted Development',
@@ -280,13 +288,17 @@ export const i18n = {
       paras: [
         'As a Solutions Engineer, I combine software and web development with process automation, data engineering and modern AI technologies. My focus is on turning technical possibilities into working, maintainable solutions for real business processes.',
         'My background ranges from web development and API integration to PostgreSQL, data pipelines and cloud infrastructure, through to production n8n and Make automations. I use AI both inside applications and workflows and actively as part of the development process.',
-        'Before my IT career I worked in team leadership and staff responsibility, purchasing, logistics and transport, field sales and, self-employed, in the event industry. That is why I never look at technology in isolation but understand business processes and operational requirements. What matters is whether a solution simplifies a process, works reliably and delivers concrete business value.',
       ],
       connectTitle: 'What I connect',
       connect: ['Software development', 'Web development', 'Process automation', 'Data engineering', 'APIs', 'AI / LLM', 'Cloud infrastructure'],
-      beforeTitle: 'Before IT',
-      before: ['Team leadership', 'Staff responsibility', 'Purchasing', 'Logistics / transport', 'Field sales', 'Operational responsibility', 'Self-employed in the event industry'],
-      quote: 'Technical know-how meets years of operational experience.',
+    },
+    background: {
+      label: 'Background',
+      title: 'Technical know-how meets years of operational experience.',
+      paras: [
+        'Before my IT career I worked for many years in operational and leadership roles – including team leadership and staff responsibility, logistics and transport, purchasing, field sales, and self-employed in the event industry.',
+        'This experience shapes my technical work today: I look at requirements not only from the perspective of code and systems, but also from the perspective of the people, workflows and operational reality behind them.',
+      ],
     },
     education: {
       label: 'Qualifications',
@@ -332,6 +344,7 @@ export const i18n = {
       flow: 'Data flow',
       items: [
         {
+          tab: 'Social Moderation',
           title: 'Automated Social Media Comment Moderation',
           scope: 'Instagram · Facebook',
           principle: 'Deterministic rules first, an LLM only where a semantic assessment is needed. Not every comment is sent to an LLM.',
@@ -361,6 +374,7 @@ export const i18n = {
           ],
         },
         {
+          tab: 'Booking Workflow',
           title: 'Booking Workflow for Video Shoots',
           scope: 'Internal social media team',
           problem: 'Requests for video shoots should be captured in a structured way, approved and automatically transferred to the calendar and overview, with minimal handling of personal data.',
@@ -388,6 +402,7 @@ export const i18n = {
           ],
         },
         {
+          tab: 'Data Pipeline',
           title: 'Daily Contact Sync to the Newsletter System',
           scope: '6 locations',
           problem: 'Contacts from several location systems should arrive in the newsletter system automatically, securely and without duplicates. Unsubscribed people must stay permanently excluded.',
@@ -416,6 +431,7 @@ export const i18n = {
           ],
         },
         {
+          tab: 'DJ Website',
           title: 'DJ De la Rossi – Artist Website',
           scope: 'Web Development · Personal Project',
           role: 'Web Development · AI-assisted Development',

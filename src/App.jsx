@@ -128,6 +128,7 @@ export default function App() {
   const t = i18n[lang]
   const [route, setRoute] = useState(readRoute)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [projIdx, setProjIdx] = useState(0)
   const isCompactViewport = useMedia('(max-width: 1023px)')
   const { scrolled, hidden } = useScrollNav()
   const compact = isCompactViewport && scrolled
@@ -154,6 +155,16 @@ export default function App() {
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [menuShown])
+
+  // Tab-Bedienung per Pfeiltasten/Pos1/Ende (Roving-Tabindex)
+  const onTabKey = (e) => {
+    const n = t.projects.items.length
+    const next = { ArrowRight: (projIdx + 1) % n, ArrowLeft: (projIdx + n - 1) % n, Home: 0, End: n - 1 }[e.key]
+    if (next === undefined) return
+    e.preventDefault()
+    setProjIdx(next)
+    document.getElementById(`project-tab-${next}`)?.focus()
+  }
 
   useEffect(() => {
     document.documentElement.lang = lang
@@ -342,21 +353,8 @@ export default function App() {
                     </div>
                   </div>
                 </Reveal>
-                <Reveal delay={0.08}>
-                  <div className="rounded-2xl border border-line bg-surface/70 p-4 md:p-6">
-                    <h3 className={`${eyebrow} mb-3 md:mb-4`}>{t.about.beforeTitle}</h3>
-                    <div className="flex flex-wrap gap-1.5 md:gap-2">
-                      {t.about.before.map((c) => <span key={c} className="rounded-full border border-line bg-bg/60 px-2.5 md:px-3 py-0.5 md:py-1 text-[13px] md:text-sm text-slate-200">{c}</span>)}
-                    </div>
-                  </div>
-                </Reveal>
               </div>
             </div>
-            <Reveal className="mt-8 md:mt-14">
-              <blockquote className="border-l-2 border-accent pl-5 md:pl-6 font-display text-xl md:text-3xl font-bold tracking-tight leading-snug grad-text">
-                {t.about.quote}
-              </blockquote>
-            </Reveal>
           </div>
         </section>
 
@@ -390,78 +388,127 @@ export default function App() {
           <div className="max-w-6xl mx-auto">
             <Heading label={t.projects.label} title={t.projects.title} />
             <Reveal className="-mt-4 md:-mt-6 mb-8 md:mb-10"><p className="text-muted text-base md:text-lg">{t.projects.intro}</p></Reveal>
-            <div className="space-y-6 md:space-y-8">
-              {t.projects.items.map((p, idx) => (
-                <Reveal key={p.title}>
-                  <article className="rounded-2xl border border-line bg-surface/70 p-5 md:p-8">
-                    <p className="font-mono text-sm text-accent">0{idx + 1} · {p.scope}</p>
-                    <h3 className="mt-2 text-xl md:text-3xl font-bold tracking-tight">{p.title}</h3>
-                    <p className="mt-1 text-sm text-muted">{p.role ?? t.projects.role}</p>
-                    {p.principle && (
-                      <div className="mt-5 rounded-xl border border-accent-deep/70 bg-accent-deep/15 p-4 md:p-5">
-                        <p className={`${eyebrow} mb-1.5`}>{t.projects.principleLabel}</p>
-                        <p className="font-display text-base md:text-xl font-bold leading-snug">{p.principle}</p>
-                      </div>
-                    )}
-                    <div className="mt-6 grid lg:grid-cols-2 gap-6 lg:gap-8">
-                      <div className="space-y-5">
-                        <div>
-                          <h4 className={`${eyebrow} mb-2`}>{p.labels?.problem ?? t.projects.problem}</h4>
-                          <p className="text-muted leading-relaxed">{p.problem}</p>
-                        </div>
-                        <div>
-                          <h4 className={`${eyebrow} mb-2`}>{p.labels?.solution ?? t.projects.solution}</h4>
-                          <p className="text-muted leading-relaxed">{p.solution}</p>
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className={`${eyebrow} mb-2`}>{p.labels?.highlights ?? t.projects.highlights}</h4>
-                        <ul className="space-y-2">
-                          {p.points.map((pt) => (
-                            <li key={pt} className="flex gap-3 text-muted leading-relaxed">
-                              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
-                              <span>{pt}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                    {p.metrics && (
-                      <div className="mt-7 md:mt-8">
-                        <h4 className={`${eyebrow} mb-3`}>{t.projects.results}</h4>
-                        <div className="grid sm:grid-cols-3 gap-2 sm:gap-3">
-                          {p.metrics.map(([value, label]) => (
-                            <div key={label} className="rounded-xl border border-line bg-bg/70 px-4 py-3 sm:p-4 flex items-baseline gap-4 sm:block">
-                              <p className="font-display text-2xl sm:text-3xl font-bold text-accent shrink-0 min-w-[6.5rem] sm:min-w-0">{value}</p>
-                              <p className="sm:mt-1 text-sm text-muted">{label}</p>
-                            </div>
-                          ))}
-                        </div>
-                        <ul className="mt-4 space-y-2">
-                          {p.results.map((r) => (
-                            <li key={r} className="flex gap-3 text-muted leading-relaxed">
-                              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
-                              <span>{r}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                    {p.flow && (
-                      <div className="mt-7 md:mt-8">
-                        <h4 className={`${eyebrow} mb-3`}>{t.projects.flow}</h4>
-                        <Flow stages={p.flow} />
-                      </div>
-                    )}
-                    <div className="mt-6 flex flex-wrap gap-2">
-                      {p.tags.map((tag) => <span key={tag} className="font-mono text-xs text-accent border border-accent-deep/60 rounded px-2 py-0.5">{tag}</span>)}
-                    </div>
-                    {p.link && (
-                      <a href={p.link.url} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full border border-line hover:border-accent font-semibold px-5 py-2.5 transition-colors">{p.link.label}</a>
-                    )}
-                  </article>
-                </Reveal>
+            <div role="tablist" aria-label={t.projects.title} onKeyDown={onTabKey} className="-mx-5 sm:-mx-6 md:mx-0 px-5 sm:px-6 md:px-0 pb-2 mb-4 md:mb-6 flex md:grid md:grid-cols-4 gap-2 md:gap-3 overflow-x-auto md:overflow-visible snap-x scroll-pl-5 sm:scroll-pl-6 md:scroll-pl-0">
+              {t.projects.items.map((p, i) => (
+                <button
+                  key={p.tab}
+                  type="button"
+                  role="tab"
+                  id={`project-tab-${i}`}
+                  aria-selected={projIdx === i}
+                  aria-controls="project-panel"
+                  tabIndex={projIdx === i ? 0 : -1}
+                  onClick={() => setProjIdx(i)}
+                  className={`snap-start shrink-0 md:shrink rounded-xl border px-4 py-3 text-left transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${projIdx === i ? 'border-accent bg-accent-deep/25 text-white' : 'border-line bg-surface/70 text-muted hover:border-accent/60 hover:text-white'}`}
+                >
+                  <span className={`block font-mono text-xs ${projIdx === i ? 'text-accent' : 'text-accent/70'}`}>0{i + 1}</span>
+                  <span className="mt-0.5 block whitespace-nowrap font-medium">{p.tab}</span>
+                </button>
               ))}
+            </div>
+            <div role="tabpanel" id="project-panel" aria-labelledby={`project-tab-${projIdx}`}>
+              <motion.div
+                key={`${lang}-${projIdx}`}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.25, ease: 'easeOut' }}
+              >
+                {(() => {
+                  const p = t.projects.items[projIdx]
+                  return (
+                      <article className="rounded-2xl border border-line bg-surface/70 p-5 md:p-8">
+                        <p className="font-mono text-sm text-accent">0{projIdx + 1} · {p.scope}</p>
+                        <h3 className="mt-2 text-xl md:text-3xl font-bold tracking-tight">{p.title}</h3>
+                        <p className="mt-1 text-sm text-muted">{p.role ?? t.projects.role}</p>
+                        {p.principle && (
+                          <div className="mt-5 rounded-xl border border-accent-deep/70 bg-accent-deep/15 p-4 md:p-5">
+                            <p className={`${eyebrow} mb-1.5`}>{t.projects.principleLabel}</p>
+                            <p className="font-display text-base md:text-xl font-bold leading-snug">{p.principle}</p>
+                          </div>
+                        )}
+                        <div className="mt-6 grid lg:grid-cols-2 gap-6 lg:gap-8">
+                          <div className="space-y-5">
+                            <div>
+                              <h4 className={`${eyebrow} mb-2`}>{p.labels?.problem ?? t.projects.problem}</h4>
+                              <p className="text-muted leading-relaxed">{p.problem}</p>
+                            </div>
+                            <div>
+                              <h4 className={`${eyebrow} mb-2`}>{p.labels?.solution ?? t.projects.solution}</h4>
+                              <p className="text-muted leading-relaxed">{p.solution}</p>
+                            </div>
+                          </div>
+                          <div>
+                            <h4 className={`${eyebrow} mb-2`}>{p.labels?.highlights ?? t.projects.highlights}</h4>
+                            <ul className="space-y-2">
+                              {p.points.map((pt) => (
+                                <li key={pt} className="flex gap-3 text-muted leading-relaxed">
+                                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+                                  <span>{pt}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                        {p.metrics && (
+                          <div className="mt-7 md:mt-8">
+                            <h4 className={`${eyebrow} mb-3`}>{t.projects.results}</h4>
+                            <div className="grid sm:grid-cols-3 gap-2 sm:gap-3">
+                              {p.metrics.map(([value, label]) => (
+                                <div key={label} className="rounded-xl border border-line bg-bg/70 px-4 py-3 sm:p-4 flex items-baseline gap-4 sm:block">
+                                  <p className="font-display text-2xl sm:text-3xl font-bold text-accent shrink-0 min-w-[6.5rem] sm:min-w-0">{value}</p>
+                                  <p className="sm:mt-1 text-sm text-muted">{label}</p>
+                                </div>
+                              ))}
+                            </div>
+                            <ul className="mt-4 space-y-2">
+                              {p.results.map((r) => (
+                                <li key={r} className="flex gap-3 text-muted leading-relaxed">
+                                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+                                  <span>{r}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                        {p.flow && (
+                          <div className="mt-7 md:mt-8">
+                            <h4 className={`${eyebrow} mb-3`}>{t.projects.flow}</h4>
+                            <Flow stages={p.flow} />
+                          </div>
+                        )}
+                        <div className="mt-6 flex flex-wrap gap-2">
+                          {p.tags.map((tag) => <span key={tag} className="font-mono text-xs text-accent border border-accent-deep/60 rounded px-2 py-0.5">{tag}</span>)}
+                        </div>
+                        {p.link && (
+                          <a href={p.link.url} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full border border-line hover:border-accent font-semibold px-5 py-2.5 transition-colors">{p.link.label}</a>
+                        )}
+                      </article>
+                  )
+                })()}
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Hintergrund: operative Erfahrung vor der IT */}
+        <section id="background" className={sectionPad}>
+          <div className="max-w-6xl mx-auto">
+            <Reveal className="mb-6 md:mb-8">
+              <p className="font-mono text-sm tracking-widest uppercase text-accent mb-3">{t.background.label}</p>
+              <h2 className="max-w-3xl text-2xl md:text-4xl font-bold tracking-tight leading-snug">{t.background.title}</h2>
+            </Reveal>
+            <div className="grid lg:grid-cols-[1.15fr_1fr] gap-6 lg:gap-12">
+              <div className="space-y-4 md:space-y-5 text-muted text-base md:text-lg leading-relaxed">
+                {t.background.paras.map((para, i) => <Reveal key={i} delay={i * 0.08}><p>{para}</p></Reveal>)}
+              </div>
+              <Reveal>
+                <div className="rounded-2xl border border-line bg-surface/70 p-4 md:p-6">
+                  <h3 className={`${eyebrow} mb-3 md:mb-4`}>{t.experience.earlierLinksTitle}</h3>
+                  <div className="flex flex-wrap gap-1.5 md:gap-2">
+                    {t.experience.earlierLinks.map((c) => <span key={c} className="rounded-full border border-line bg-bg/60 px-2.5 md:px-3 py-0.5 md:py-1 text-[13px] md:text-sm text-slate-200">{c}</span>)}
+                  </div>
+                </div>
+              </Reveal>
             </div>
           </div>
         </section>
