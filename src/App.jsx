@@ -11,7 +11,6 @@ function readRoute() {
 }
 
 const sections = ['about', 'work', 'projects', 'stack', 'experience', 'education', 'contact']
-const chip = 'rounded-full border border-line bg-bg/60 px-3 py-1 text-sm text-slate-200'
 const eyebrow = 'font-mono text-xs uppercase tracking-widest text-accent'
 // Hero-Foto: Varianten aus scripts/optimize-hero.py (AVIF/WebP/JPEG, je 448/640/832 px breit)
 const HERO_WIDTHS = [448, 640, 832]
@@ -156,14 +155,21 @@ export default function App() {
     return () => window.removeEventListener('keydown', onKey)
   }, [menuShown])
 
+  // Tab wählen und so scrollen, dass er in der (mobil horizontal scrollbaren) Leiste komplett sichtbar ist
+  const selectTab = (i, btn) => {
+    setProjIdx(i)
+    btn?.scrollIntoView({ inline: 'center', block: 'nearest' })
+  }
+
   // Tab-Bedienung per Pfeiltasten/Pos1/Ende (Roving-Tabindex)
   const onTabKey = (e) => {
     const n = t.projects.items.length
     const next = { ArrowRight: (projIdx + 1) % n, ArrowLeft: (projIdx + n - 1) % n, Home: 0, End: n - 1 }[e.key]
     if (next === undefined) return
     e.preventDefault()
-    setProjIdx(next)
-    document.getElementById(`project-tab-${next}`)?.focus()
+    const btn = document.getElementById(`project-tab-${next}`)
+    selectTab(next, btn)
+    btn?.focus()
   }
 
   useEffect(() => {
@@ -279,7 +285,7 @@ export default function App() {
         <main className="px-5 sm:px-6 pt-28 md:pt-32 pb-16 md:pb-24">
           <div className="max-w-3xl mx-auto">
             <a href="#" className="text-sm text-accent hover:underline">{t.legal.back}</a>
-            <h1 className="mt-6 mb-10 text-4xl md:text-5xl font-bold tracking-tight">{t.legal[route].title}</h1>
+            <h1 className="mt-6 mb-10 text-[clamp(1.6rem,8vw,2.25rem)] md:text-5xl font-bold tracking-tight hyphens-auto wrap-break-word">{t.legal[route].title}</h1>
             <div className="space-y-8">
               {t.legal[route].blocks.map(([h, paras]) => (
                 <section key={h}>
@@ -388,7 +394,7 @@ export default function App() {
           <div className="max-w-6xl mx-auto">
             <Heading label={t.projects.label} title={t.projects.title} />
             <Reveal className="-mt-4 md:-mt-6 mb-8 md:mb-10"><p className="text-muted text-base md:text-lg">{t.projects.intro}</p></Reveal>
-            <div role="tablist" aria-label={t.projects.title} onKeyDown={onTabKey} className="-mx-5 sm:-mx-6 md:mx-0 px-5 sm:px-6 md:px-0 pb-2 mb-4 md:mb-6 flex md:grid md:grid-cols-4 gap-2 md:gap-3 overflow-x-auto md:overflow-visible snap-x scroll-pl-5 sm:scroll-pl-6 md:scroll-pl-0">
+            <div role="tablist" aria-label={t.projects.title} onKeyDown={onTabKey} className="-mx-5 sm:-mx-6 md:mx-0 px-5 sm:px-6 md:px-0 pb-2 mb-4 md:mb-6 flex md:grid md:grid-cols-4 gap-2 md:gap-3 overflow-x-auto md:overflow-visible [scrollbar-width:thin] [scrollbar-color:var(--color-line)_transparent]">
               {t.projects.items.map((p, i) => (
                 <button
                   key={p.tab}
@@ -398,8 +404,8 @@ export default function App() {
                   aria-selected={projIdx === i}
                   aria-controls="project-panel"
                   tabIndex={projIdx === i ? 0 : -1}
-                  onClick={() => setProjIdx(i)}
-                  className={`snap-start shrink-0 md:shrink rounded-xl border px-4 py-3 text-left transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${projIdx === i ? 'border-accent bg-accent-deep/25 text-white' : 'border-line bg-surface/70 text-muted hover:border-accent/60 hover:text-white'}`}
+                  onClick={(e) => selectTab(i, e.currentTarget)}
+                  className={`shrink-0 md:shrink rounded-xl border px-4 py-3 text-left transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${projIdx === i ? 'border-accent bg-accent-deep/25 text-white' : 'border-line bg-surface/70 text-muted hover:border-accent/60 hover:text-white'}`}
                 >
                   <span className={`block font-mono text-xs ${projIdx === i ? 'text-accent' : 'text-accent/70'}`}>0{i + 1}</span>
                   <span className="mt-0.5 block whitespace-nowrap font-medium">{p.tab}</span>
@@ -586,10 +592,6 @@ export default function App() {
                   </li>
                 ))}
               </ul>
-              <h4 className={`${eyebrow} mt-6 mb-3`}>{t.experience.earlierLinksTitle}</h4>
-              <div className="flex flex-wrap gap-2">
-                {t.experience.earlierLinks.map((it) => <span key={it} className={chip}>{it}</span>)}
-              </div>
             </Reveal>
           </div>
         </section>

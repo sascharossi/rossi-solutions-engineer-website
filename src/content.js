@@ -320,7 +320,7 @@ export const i18n = {
       title: 'Tech Stack',
       groups: { ai: 'AI & LLM', automation: 'Automation & Integration', data: 'Data Engineering', dev: 'Development & Web', cloud: 'Cloud & Infrastructure', analytics: 'Analytics & Platforms' },
       extraLabels: { analytics: 'Further platforms' },
-      rename: { Datenmodellierung: 'Data Modelling' },
+      rename: { Datenmodellierung: 'Data Modelling', 'API-basierte Webintegrationen': 'API-based web integrations' },
     },
     work: {
       label: 'Focus',
@@ -388,7 +388,7 @@ export const i18n = {
             'Calendar integration: confirmed appointments land in the shared calendar automatically, an overview is kept up to date.',
             'Technical documentation for IT operations and the data protection officer.',
           ],
-          tags: ['n8n', 'PostgreSQL', 'AWS', 'Webhooks', 'Asana', 'Outlook Kalender', 'Google Sheets'],
+          tags: ['n8n', 'PostgreSQL', 'AWS', 'Webhooks', 'Asana', 'Outlook Calendar', 'Google Sheets'],
           metrics: [['30', 'users'], ['≈ 5 h', 'time saved per week'], ['0', 'scheduling conflicts']],
           results: [
             'Previously a lot was coordinated verbally, now everything is transparent and binding.',
@@ -464,7 +464,7 @@ export const i18n = {
       earlierTitle: 'Earlier experience',
       earlierIntro: 'Before my IT career I gained substantial professional experience. It adds an understanding of real business processes to my technical background.',
       earlierItems: ['Team leadership and staff responsibility', 'Freelancer in the event industry', 'Team lead logistics / transport', 'Technical purchasing and field sales'],
-      earlierLinksTitle: 'What I bring from it into technology',
+      earlierLinksTitle: 'What this experience brings to my technical work',
       earlierLinks: ['Process understanding', 'Customer orientation', 'Organisation', 'Communication', 'Responsibility', 'Understanding of real business processes'],
     },
     contact: {
