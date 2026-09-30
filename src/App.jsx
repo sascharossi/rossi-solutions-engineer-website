@@ -510,6 +510,11 @@ export default function App() {
                 </div>
               </Reveal>
             </div>
+            <Reveal className="mt-8 md:mt-10">
+              <blockquote className="border-l-2 border-accent pl-5 md:pl-6 font-display text-lg md:text-2xl font-bold tracking-tight leading-snug grad-text">
+                {t.background.closing}
+              </blockquote>
+            </Reveal>
           </div>
         </section>
 

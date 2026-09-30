@@ -69,6 +69,7 @@ export const i18n = {
         'Vor meiner IT-Laufbahn habe ich über viele Jahre in operativen und verantwortlichen Rollen gearbeitet – unter anderem in Teamleitung und Personalverantwortung, Logistik und Transport, Einkauf, Außendienst sowie selbstständig in der Eventbranche.',
         'Diese Erfahrung prägt heute meine technische Arbeit: Ich betrachte Anforderungen nicht nur aus Sicht von Code und Systemen, sondern auch aus Sicht der Menschen, Abläufe und betrieblichen Realität dahinter.',
       ],
+      closing: 'Entscheidend ist, ob eine Lösung einen Prozess vereinfacht, zuverlässig funktioniert und einen konkreten geschäftlichen Nutzen schafft.',
     },
     education: {
       label: 'Qualifikationen',
@@ -299,6 +300,7 @@ export const i18n = {
         'Before my IT career I worked for many years in operational and leadership roles – including team leadership and staff responsibility, logistics and transport, purchasing, field sales, and self-employed in the event industry.',
         'This experience shapes my technical work today: I look at requirements not only from the perspective of code and systems, but also from the perspective of the people, workflows and operational reality behind them.',
       ],
+      closing: 'What matters is whether a solution simplifies a process, works reliably and delivers concrete business value.',
     },
     education: {
       label: 'Qualifications',
